@@ -1,0 +1,324 @@
+Analysis & Synthesis report for fpga
+Thu Sep 28 21:26:08 2017
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Inverted Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: control:inst2
+ 11. Parameter Settings for User Entity Instance: div:inst4
+ 12. Parameter Settings for User Entity Instance: divDigital:inst18
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Sep 28 21:26:08 2017    ;
+; Quartus II Version          ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name               ; fpga                                     ;
+; Top-level Entity Name       ; fpga                                     ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 243                                      ;
+; Total pins                  ; 20                                       ;
+; Total virtual pins          ; 0                                        ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
++-----------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EPM570T100C5       ;                    ;
+; Top-level entity name                                          ; fpga               ; fpga               ;
+; Family name                                                    ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                        ; Off                ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                             ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------+
+; cnt4.vhd                         ; yes             ; User VHDL File                     ; C:/Users/hp/Desktop/数电课程设计/FPGA/2.5/cnt4.vhd       ;
+; dec24.vhd                        ; yes             ; User VHDL File                     ; C:/Users/hp/Desktop/数电课程设计/FPGA/2.5/dec24.vhd      ;
+; digital47.vhd                    ; yes             ; User VHDL File                     ; C:/Users/hp/Desktop/数电课程设计/FPGA/2.5/digital47.vhd  ;
+; div.vhd                          ; yes             ; User VHDL File                     ; C:/Users/hp/Desktop/数电课程设计/FPGA/2.5/div.vhd        ;
+; divDigital.vhd                   ; yes             ; User VHDL File                     ; C:/Users/hp/Desktop/数电课程设计/FPGA/2.5/divDigital.vhd ;
+; mux41a.vhd                       ; yes             ; User VHDL File                     ; C:/Users/hp/Desktop/数电课程设计/FPGA/2.5/mux41a.vhd     ;
+; control.vhd                      ; yes             ; User VHDL File                     ; C:/Users/hp/Desktop/数电课程设计/FPGA/2.5/control.vhd    ;
+; fpga.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/hp/Desktop/数电课程设计/FPGA/2.5/fpga.bdf       ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Total logic elements                        ; 243             ;
+;     -- Combinational with no register       ; 173             ;
+;     -- Register only                        ; 9               ;
+;     -- Combinational with a register        ; 61              ;
+;                                             ;                 ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 123             ;
+;     -- 3 input functions                    ; 30              ;
+;     -- 2 input functions                    ; 73              ;
+;     -- 1 input functions                    ; 8               ;
+;     -- 0 input functions                    ; 0               ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 199             ;
+;     -- arithmetic mode                      ; 44              ;
+;     -- qfbk mode                            ; 0               ;
+;     -- register cascade mode                ; 0               ;
+;     -- synchronous clear/load mode          ; 0               ;
+;     -- asynchronous clear/load mode         ; 28              ;
+;                                             ;                 ;
+; Total registers                             ; 70              ;
+; Total logic cells in carry chains           ; 49              ;
+; I/O pins                                    ; 20              ;
+; Maximum fan-out node                        ; div:inst4|tempQ ;
+; Maximum fan-out                             ; 45              ;
+; Total fan-out                               ; 897             ;
+; Average fan-out                             ; 3.41            ;
++---------------------------------------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                      ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name     ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------+--------------+
+; |fpga                      ; 243 (0)     ; 70           ; 0          ; 20   ; 0            ; 173 (0)      ; 9 (0)             ; 61 (0)           ; 49 (0)          ; 0 (0)      ; |fpga                   ; work         ;
+;    |cnt4:inst|             ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |fpga|cnt4:inst         ; work         ;
+;    |control:inst2|         ; 155 (155)   ; 40           ; 0          ; 0    ; 0            ; 115 (115)    ; 9 (9)             ; 31 (31)          ; 23 (23)         ; 0 (0)      ; |fpga|control:inst2     ; work         ;
+;    |dec24:inst19|          ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |fpga|dec24:inst19      ; work         ;
+;    |digital47:inst21|      ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |fpga|digital47:inst21  ; work         ;
+;    |div:inst4|             ; 26 (26)     ; 11           ; 0          ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 11 (11)          ; 10 (10)         ; 0 (0)      ; |fpga|div:inst4         ; work         ;
+;    |divDigital:inst18|     ; 41 (41)     ; 17           ; 0          ; 0    ; 0            ; 24 (24)      ; 0 (0)             ; 17 (17)          ; 16 (16)         ; 0 (0)      ; |fpga|divDigital:inst18 ; work         ;
+;    |mux41a:inst6|          ; 9 (9)       ; 0            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |fpga|mux41a:inst6      ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 70    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 28    ;
+; Number of registers using Asynchronous Load  ; 8     ;
+; Number of registers using Clock Enable       ; 29    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; control:inst2|light[3]                 ; 2       ;
+; control:inst2|light[2]                 ; 3       ;
+; control:inst2|mode[2]                  ; 5       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |fpga|control:inst2|cnt[3]    ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |fpga|control:inst2|light[0]  ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fpga|control:inst2|NStime[1] ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fpga|control:inst2|EWtime[4] ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fpga|control:inst2|NStime[4] ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |fpga|control:inst2|NStime[0] ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |fpga|control:inst2|EWtime[3] ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fpga|control:inst2|EWtime[7] ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fpga|control:inst2|NStime[5] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |fpga|control:inst2|NSG       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |fpga|control:inst2|NSR       ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |fpga|mux41a:inst6|Y[1]       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: control:inst2 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; s0             ; 0     ; Signed Integer                    ;
+; s1             ; 1     ; Signed Integer                    ;
+; s2             ; 2     ; Signed Integer                    ;
+; s3             ; 3     ; Signed Integer                    ;
+; s4             ; 4     ; Signed Integer                    ;
+; s5             ; 5     ; Signed Integer                    ;
+; s6             ; 6     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div:inst4 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; n              ; 1000  ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divDigital:inst18 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; n              ; 50000 ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Thu Sep 28 21:26:05 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpga -c fpga
+Info: Found 2 design units, including 1 entities, in source file cnt4.vhd
+    Info: Found design unit 1: cnt4-beh
+    Info: Found entity 1: cnt4
+Info: Found 2 design units, including 1 entities, in source file dec24.vhd
+    Info: Found design unit 1: dec24-beh
+    Info: Found entity 1: dec24
+Info: Found 2 design units, including 1 entities, in source file digital47.vhd
+    Info: Found design unit 1: digital47-beh
+    Info: Found entity 1: digital47
+Info: Found 2 design units, including 1 entities, in source file div.vhd
+    Info: Found design unit 1: div-bhv
+    Info: Found entity 1: div
+Info: Found 2 design units, including 1 entities, in source file divDigital.vhd
+    Info: Found design unit 1: divDigital-bhv
+    Info: Found entity 1: divDigital
+Info: Found 2 design units, including 1 entities, in source file mux41a.vhd
+    Info: Found design unit 1: mux41a-beh
+    Info: Found entity 1: mux41a
+Info: Found 2 design units, including 1 entities, in source file control.vhd
+    Info: Found design unit 1: control-beh
+    Info: Found entity 1: control
+Info: Found 1 design units, including 1 entities, in source file fpga.bdf
+    Info: Found entity 1: fpga
+Info: Elaborating entity "fpga" for the top level hierarchy
+Info: Elaborating entity "control" for hierarchy "control:inst2"
+Info: Elaborating entity "div" for hierarchy "div:inst4"
+Info: Elaborating entity "divDigital" for hierarchy "divDigital:inst18"
+Info: Elaborating entity "digital47" for hierarchy "digital47:inst21"
+Info: Elaborating entity "mux41a" for hierarchy "mux41a:inst6"
+Info: Elaborating entity "cnt4" for hierarchy "cnt4:inst"
+Info: Elaborating entity "dec24" for hierarchy "dec24:inst19"
+Info: Registers with preset signals will power-up high
+Info: Implemented 263 device resources after synthesis - the final resource count might be different
+    Info: Implemented 3 input pins
+    Info: Implemented 17 output pins
+    Info: Implemented 243 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 243 megabytes
+    Info: Processing ended: Thu Sep 28 21:26:08 2017
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

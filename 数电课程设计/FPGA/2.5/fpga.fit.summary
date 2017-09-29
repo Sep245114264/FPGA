@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu Sep 28 21:26:10 2017
+Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
+Revision Name : fpga
+Top-level Entity Name : fpga
+Family : MAX II
+Device : EPM570T100C5
+Timing Models : Final
+Total logic elements : 242 / 570 ( 42 % )
+Total pins : 20 / 76 ( 26 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -1,0 +1,909 @@
+Classic Timing Analyzer report for fpga
+Thu Sep 28 21:26:14 2017
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'CLK'
+  7. Clock Hold: 'CLK'
+  8. tsu
+  9. tco
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                  ;
++------------------------------+----------+----------------------------------+----------------------------------+-------------------------+-------------------------+------------+----------+--------------+
+; Type                         ; Slack    ; Required Time                    ; Actual Time                      ; From                    ; To                      ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+----------+----------------------------------+----------------------------------+-------------------------+-------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A      ; None                             ; -2.251 ns                        ; flash                   ; control:inst2|state[0]  ; --         ; CLK      ; 0            ;
+; Worst-case tco               ; N/A      ; None                             ; 27.697 ns                        ; control:inst2|EWtime[4] ; D[1]                    ; CLK        ; --       ; 0            ;
+; Worst-case th                ; N/A      ; None                             ; 7.487 ns                         ; RST                     ; control:inst2|cnt[1]    ; --         ; CLK      ; 0            ;
+; Clock Setup: 'CLK'           ; 5.758 ns ; 50.00 MHz ( period = 20.000 ns ) ; 70.21 MHz ( period = 14.242 ns ) ; control:inst2|state[2]  ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 0            ;
+; Clock Hold: 'CLK'            ; 1.410 ns ; 50.00 MHz ( period = 20.000 ns ) ; N/A                              ; control:inst2|mode[0]   ; control:inst2|mode[1]   ; CLK        ; CLK      ; 0            ;
+; Total number of failed paths ;          ;                                  ;                                  ;                         ;                         ;            ;          ; 0            ;
++------------------------------+----------+----------------------------------+----------------------------------+-------------------------+-------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                            ;
++---------------------------------------------------------------------+--------------------+------+-----+-------------+
+; Option                                                              ; Setting            ; From ; To  ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+-----+-------------+
+; Device Name                                                         ; EPM570T100C5       ;      ;     ;             ;
+; Timing Models                                                       ; Final              ;      ;     ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;     ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;     ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;     ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;     ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;     ;             ;
+; fmax Requirement                                                    ; 50 MHz             ;      ;     ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;     ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;     ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;     ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;     ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;     ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;     ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;     ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;     ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;     ;             ;
+; Number of paths to report                                           ; 200                ;      ;     ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;     ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;     ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;     ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;     ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;     ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;     ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;     ;             ;
+; Clock Settings                                                      ; CLK                ;      ; CLK ;             ;
++---------------------------------------------------------------------+--------------------+------+-----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; CLK             ; CLK                ; User Pin ; 50.0 MHz         ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLK'                                                                                                                                                                                                                                              ;
++-----------------------------------------+-----------------------------------------------------+---------------------------+-------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                      ; To                      ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+---------------------------+-------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; 5.758 ns                                ; 70.21 MHz ( period = 14.242 ns )                    ; control:inst2|state[2]    ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 13.533 ns               ;
+; 5.766 ns                                ; 70.25 MHz ( period = 14.234 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 13.525 ns               ;
+; 5.786 ns                                ; 70.35 MHz ( period = 14.214 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 13.505 ns               ;
+; 5.884 ns                                ; 70.84 MHz ( period = 14.116 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 13.407 ns               ;
+; 6.039 ns                                ; 71.63 MHz ( period = 13.961 ns )                    ; control:inst2|state[0]    ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 13.252 ns               ;
+; 6.051 ns                                ; 71.69 MHz ( period = 13.949 ns )                    ; divDigital:inst18|num[2]  ; divDigital:inst18|tempQ ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 13.240 ns               ;
+; 6.250 ns                                ; 72.73 MHz ( period = 13.750 ns )                    ; control:inst2|NStime[0]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 13.041 ns               ;
+; 6.259 ns                                ; 72.77 MHz ( period = 13.741 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 13.032 ns               ;
+; 6.300 ns                                ; 72.99 MHz ( period = 13.700 ns )                    ; control:inst2|NStime[0]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.991 ns               ;
+; 6.408 ns                                ; 73.57 MHz ( period = 13.592 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.883 ns               ;
+; 6.422 ns                                ; 73.65 MHz ( period = 13.578 ns )                    ; control:inst2|NStime[0]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.869 ns               ;
+; 6.430 ns                                ; 73.69 MHz ( period = 13.570 ns )                    ; control:inst2|NStime[5]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.861 ns               ;
+; 6.435 ns                                ; 73.72 MHz ( period = 13.565 ns )                    ; control:inst2|state[2]    ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.856 ns               ;
+; 6.444 ns                                ; 73.77 MHz ( period = 13.556 ns )                    ; control:inst2|state[2]    ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.847 ns               ;
+; 6.506 ns                                ; 74.11 MHz ( period = 13.494 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.785 ns               ;
+; 6.507 ns                                ; 74.11 MHz ( period = 13.493 ns )                    ; divDigital:inst18|num[0]  ; divDigital:inst18|tempQ ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.784 ns               ;
+; 6.552 ns                                ; 74.36 MHz ( period = 13.448 ns )                    ; control:inst2|NStime[5]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.739 ns               ;
+; 6.641 ns                                ; 74.86 MHz ( period = 13.359 ns )                    ; control:inst2|EWtime[5]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.650 ns               ;
+; 6.657 ns                                ; 74.95 MHz ( period = 13.343 ns )                    ; control:inst2|NStime[0]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.634 ns               ;
+; 6.705 ns                                ; 75.22 MHz ( period = 13.295 ns )                    ; control:inst2|state[1]    ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.586 ns               ;
+; 6.705 ns                                ; 75.22 MHz ( period = 13.295 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.586 ns               ;
+; 6.706 ns                                ; 75.22 MHz ( period = 13.294 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.585 ns               ;
+; 6.716 ns                                ; 75.28 MHz ( period = 13.284 ns )                    ; control:inst2|state[0]    ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.575 ns               ;
+; 6.725 ns                                ; 75.33 MHz ( period = 13.275 ns )                    ; control:inst2|state[0]    ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.566 ns               ;
+; 6.726 ns                                ; 75.34 MHz ( period = 13.274 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.565 ns               ;
+; 6.774 ns                                ; 75.61 MHz ( period = 13.226 ns )                    ; control:inst2|NStime[0]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.517 ns               ;
+; 6.781 ns                                ; 75.65 MHz ( period = 13.219 ns )                    ; divDigital:inst18|num[3]  ; divDigital:inst18|tempQ ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.510 ns               ;
+; 6.785 ns                                ; 75.67 MHz ( period = 13.215 ns )                    ; control:inst2|NStime[0]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.506 ns               ;
+; 6.815 ns                                ; 75.84 MHz ( period = 13.185 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.476 ns               ;
+; 6.824 ns                                ; 75.90 MHz ( period = 13.176 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.467 ns               ;
+; 6.826 ns                                ; 75.91 MHz ( period = 13.174 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.465 ns               ;
+; 6.835 ns                                ; 75.96 MHz ( period = 13.165 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.456 ns               ;
+; 6.846 ns                                ; 76.02 MHz ( period = 13.154 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.445 ns               ;
+; 6.866 ns                                ; 76.14 MHz ( period = 13.134 ns )                    ; control:inst2|EWtime[7]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.425 ns               ;
+; 6.876 ns                                ; 76.20 MHz ( period = 13.124 ns )                    ; divDigital:inst18|num[1]  ; divDigital:inst18|tempQ ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.415 ns               ;
+; 6.922 ns                                ; 76.46 MHz ( period = 13.078 ns )                    ; control:inst2|EWtime[0]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.369 ns               ;
+; 6.933 ns                                ; 76.53 MHz ( period = 13.067 ns )                    ; control:inst2|EWtime[2]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.358 ns               ;
+; 6.933 ns                                ; 76.53 MHz ( period = 13.067 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.358 ns               ;
+; 6.944 ns                                ; 76.59 MHz ( period = 13.056 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.347 ns               ;
+; 6.947 ns                                ; 76.61 MHz ( period = 13.053 ns )                    ; divDigital:inst18|num[4]  ; divDigital:inst18|tempQ ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.344 ns               ;
+; 6.987 ns                                ; 76.85 MHz ( period = 13.013 ns )                    ; control:inst2|state[2]    ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.304 ns               ;
+; 7.039 ns                                ; 77.15 MHz ( period = 12.961 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.252 ns               ;
+; 7.050 ns                                ; 77.22 MHz ( period = 12.950 ns )                    ; control:inst2|state[2]    ; control:inst2|NStime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.241 ns               ;
+; 7.072 ns                                ; 77.35 MHz ( period = 12.928 ns )                    ; control:inst2|NStime[5]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.219 ns               ;
+; 7.110 ns                                ; 77.58 MHz ( period = 12.890 ns )                    ; control:inst2|NStime[2]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.181 ns               ;
+; 7.137 ns                                ; 77.74 MHz ( period = 12.863 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.154 ns               ;
+; 7.160 ns                                ; 77.88 MHz ( period = 12.840 ns )                    ; control:inst2|NStime[2]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.131 ns               ;
+; 7.191 ns                                ; 78.07 MHz ( period = 12.809 ns )                    ; control:inst2|state[2]    ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.100 ns               ;
+; 7.198 ns                                ; 78.11 MHz ( period = 12.802 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.093 ns               ;
+; 7.199 ns                                ; 78.12 MHz ( period = 12.801 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.092 ns               ;
+; 7.199 ns                                ; 78.12 MHz ( period = 12.801 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.092 ns               ;
+; 7.215 ns                                ; 78.22 MHz ( period = 12.785 ns )                    ; control:inst2|cnt[3]      ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.076 ns               ;
+; 7.219 ns                                ; 78.24 MHz ( period = 12.781 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.072 ns               ;
+; 7.226 ns                                ; 78.28 MHz ( period = 12.774 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.065 ns               ;
+; 7.246 ns                                ; 78.41 MHz ( period = 12.754 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.045 ns               ;
+; 7.254 ns                                ; 78.46 MHz ( period = 12.746 ns )                    ; control:inst2|state[1]    ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.037 ns               ;
+; 7.259 ns                                ; 78.49 MHz ( period = 12.741 ns )                    ; control:inst2|state[0]    ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.032 ns               ;
+; 7.260 ns                                ; 78.49 MHz ( period = 12.740 ns )                    ; control:inst2|NStime[5]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.031 ns               ;
+; 7.263 ns                                ; 78.51 MHz ( period = 12.737 ns )                    ; control:inst2|EWtime[5]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.028 ns               ;
+; 7.265 ns                                ; 78.52 MHz ( period = 12.735 ns )                    ; control:inst2|NStime[0]   ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.026 ns               ;
+; 7.282 ns                                ; 78.63 MHz ( period = 12.718 ns )                    ; control:inst2|NStime[2]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 12.009 ns               ;
+; 7.306 ns                                ; 78.78 MHz ( period = 12.694 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.985 ns               ;
+; 7.308 ns                                ; 78.79 MHz ( period = 12.692 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.983 ns               ;
+; 7.317 ns                                ; 78.85 MHz ( period = 12.683 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.974 ns               ;
+; 7.319 ns                                ; 78.86 MHz ( period = 12.681 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.972 ns               ;
+; 7.321 ns                                ; 78.87 MHz ( period = 12.679 ns )                    ; divDigital:inst18|num[5]  ; divDigital:inst18|tempQ ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.970 ns               ;
+; 7.331 ns                                ; 78.93 MHz ( period = 12.669 ns )                    ; control:inst2|state[0]    ; control:inst2|NStime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.960 ns               ;
+; 7.334 ns                                ; 78.95 MHz ( period = 12.666 ns )                    ; control:inst2|cnt[3]      ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.957 ns               ;
+; 7.336 ns                                ; 78.96 MHz ( period = 12.664 ns )                    ; divDigital:inst18|num[7]  ; divDigital:inst18|tempQ ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.955 ns               ;
+; 7.344 ns                                ; 79.01 MHz ( period = 12.656 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.947 ns               ;
+; 7.370 ns                                ; 79.18 MHz ( period = 12.630 ns )                    ; control:inst2|NStime[5]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.921 ns               ;
+; 7.381 ns                                ; 79.25 MHz ( period = 12.619 ns )                    ; control:inst2|NStime[5]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.910 ns               ;
+; 7.391 ns                                ; 79.31 MHz ( period = 12.609 ns )                    ; control:inst2|NStime[0]   ; control:inst2|NStime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.900 ns               ;
+; 7.432 ns                                ; 79.57 MHz ( period = 12.568 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|NStime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.859 ns               ;
+; 7.442 ns                                ; 79.63 MHz ( period = 12.558 ns )                    ; control:inst2|state[2]    ; control:inst2|NStime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.849 ns               ;
+; 7.443 ns                                ; 79.64 MHz ( period = 12.557 ns )                    ; control:inst2|state[2]    ; control:inst2|NStime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.848 ns               ;
+; 7.449 ns                                ; 79.67 MHz ( period = 12.551 ns )                    ; control:inst2|state[2]    ; control:inst2|EWtime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.842 ns               ;
+; 7.452 ns                                ; 79.69 MHz ( period = 12.548 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|NStime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.839 ns               ;
+; 7.457 ns                                ; 79.73 MHz ( period = 12.543 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|EWtime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.834 ns               ;
+; 7.472 ns                                ; 79.82 MHz ( period = 12.528 ns )                    ; control:inst2|state[0]    ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.819 ns               ;
+; 7.477 ns                                ; 79.85 MHz ( period = 12.523 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|EWtime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.814 ns               ;
+; 7.488 ns                                ; 79.92 MHz ( period = 12.512 ns )                    ; control:inst2|EWtime[7]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.803 ns               ;
+; 7.503 ns                                ; 80.02 MHz ( period = 12.497 ns )                    ; control:inst2|NStime[3]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.788 ns               ;
+; 7.517 ns                                ; 80.11 MHz ( period = 12.483 ns )                    ; control:inst2|NStime[2]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.774 ns               ;
+; 7.518 ns                                ; 80.12 MHz ( period = 12.482 ns )                    ; control:inst2|state[1]    ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.773 ns               ;
+; 7.550 ns                                ; 80.32 MHz ( period = 12.450 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|NStime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.741 ns               ;
+; 7.553 ns                                ; 80.34 MHz ( period = 12.447 ns )                    ; control:inst2|NStime[3]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.738 ns               ;
+; 7.554 ns                                ; 80.35 MHz ( period = 12.446 ns )                    ; control:inst2|NStime[6]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.737 ns               ;
+; 7.575 ns                                ; 80.48 MHz ( period = 12.425 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|EWtime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.716 ns               ;
+; 7.581 ns                                ; 80.52 MHz ( period = 12.419 ns )                    ; control:inst2|EWtime[5]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.710 ns               ;
+; 7.618 ns                                ; 80.76 MHz ( period = 12.382 ns )                    ; control:inst2|state[2]    ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.673 ns               ;
+; 7.634 ns                                ; 80.87 MHz ( period = 12.366 ns )                    ; control:inst2|NStime[2]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.657 ns               ;
+; 7.644 ns                                ; 80.93 MHz ( period = 12.356 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|EWtime[2] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.647 ns               ;
+; 7.645 ns                                ; 80.94 MHz ( period = 12.355 ns )                    ; control:inst2|NStime[2]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.646 ns               ;
+; 7.675 ns                                ; 81.14 MHz ( period = 12.325 ns )                    ; control:inst2|NStime[3]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.616 ns               ;
+; 7.676 ns                                ; 81.14 MHz ( period = 12.324 ns )                    ; control:inst2|NStime[6]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.615 ns               ;
+; 7.690 ns                                ; 81.23 MHz ( period = 12.310 ns )                    ; control:inst2|NStime[4]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.601 ns               ;
+; 7.690 ns                                ; 81.23 MHz ( period = 12.310 ns )                    ; control:inst2|EWtime[5]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.601 ns               ;
+; 7.692 ns                                ; 81.25 MHz ( period = 12.308 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.599 ns               ;
+; 7.701 ns                                ; 81.31 MHz ( period = 12.299 ns )                    ; control:inst2|EWtime[5]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.590 ns               ;
+; 7.719 ns                                ; 81.43 MHz ( period = 12.281 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.572 ns               ;
+; 7.723 ns                                ; 81.45 MHz ( period = 12.277 ns )                    ; control:inst2|state[0]    ; control:inst2|NStime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.568 ns               ;
+; 7.724 ns                                ; 81.46 MHz ( period = 12.276 ns )                    ; control:inst2|state[0]    ; control:inst2|NStime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.567 ns               ;
+; 7.730 ns                                ; 81.50 MHz ( period = 12.270 ns )                    ; control:inst2|state[0]    ; control:inst2|EWtime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.561 ns               ;
+; 7.733 ns                                ; 81.52 MHz ( period = 12.267 ns )                    ; control:inst2|NStime[0]   ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.558 ns               ;
+; 7.742 ns                                ; 81.58 MHz ( period = 12.258 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|EWtime[2] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.549 ns               ;
+; 7.774 ns                                ; 81.79 MHz ( period = 12.226 ns )                    ; control:inst2|state[1]    ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.517 ns               ;
+; 7.783 ns                                ; 81.85 MHz ( period = 12.217 ns )                    ; control:inst2|NStime[0]   ; control:inst2|NStime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.508 ns               ;
+; 7.784 ns                                ; 81.86 MHz ( period = 12.216 ns )                    ; control:inst2|NStime[0]   ; control:inst2|NStime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.507 ns               ;
+; 7.792 ns                                ; 81.91 MHz ( period = 12.208 ns )                    ; control:inst2|cnt[0]      ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.499 ns               ;
+; 7.799 ns                                ; 81.96 MHz ( period = 12.201 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.492 ns               ;
+; 7.806 ns                                ; 82.01 MHz ( period = 12.194 ns )                    ; control:inst2|EWtime[7]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.485 ns               ;
+; 7.812 ns                                ; 82.05 MHz ( period = 12.188 ns )                    ; control:inst2|NStime[4]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.479 ns               ;
+; 7.824 ns                                ; 82.13 MHz ( period = 12.176 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|NStime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.467 ns               ;
+; 7.825 ns                                ; 82.14 MHz ( period = 12.175 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|NStime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.466 ns               ;
+; 7.844 ns                                ; 82.26 MHz ( period = 12.156 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|NStime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.447 ns               ;
+; 7.845 ns                                ; 82.27 MHz ( period = 12.155 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|NStime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.446 ns               ;
+; 7.860 ns                                ; 82.37 MHz ( period = 12.140 ns )                    ; control:inst2|NStime[1]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.431 ns               ;
+; 7.861 ns                                ; 82.38 MHz ( period = 12.139 ns )                    ; control:inst2|EWtime[0]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.430 ns               ;
+; 7.861 ns                                ; 82.38 MHz ( period = 12.139 ns )                    ; control:inst2|NStime[5]   ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.430 ns               ;
+; 7.862 ns                                ; 82.39 MHz ( period = 12.138 ns )                    ; control:inst2|EWtime[0]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.429 ns               ;
+; 7.863 ns                                ; 82.39 MHz ( period = 12.137 ns )                    ; control:inst2|NStime[5]   ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.428 ns               ;
+; 7.872 ns                                ; 82.45 MHz ( period = 12.128 ns )                    ; control:inst2|EWtime[2]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.419 ns               ;
+; 7.873 ns                                ; 82.46 MHz ( period = 12.127 ns )                    ; control:inst2|EWtime[2]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.418 ns               ;
+; 7.886 ns                                ; 82.55 MHz ( period = 12.114 ns )                    ; control:inst2|NStime[7]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.405 ns               ;
+; 7.890 ns                                ; 82.58 MHz ( period = 12.110 ns )                    ; control:inst2|state[0]    ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.401 ns               ;
+; 7.893 ns                                ; 82.60 MHz ( period = 12.107 ns )                    ; control:inst2|cnt[1]      ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.398 ns               ;
+; 7.894 ns                                ; 82.60 MHz ( period = 12.106 ns )                    ; control:inst2|EWtime[5]   ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.397 ns               ;
+; 7.901 ns                                ; 82.65 MHz ( period = 12.099 ns )                    ; control:inst2|NStime[0]   ; control:inst2|EWtime[2] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.390 ns               ;
+; 7.910 ns                                ; 82.71 MHz ( period = 12.090 ns )                    ; control:inst2|NStime[1]   ; control:inst2|EWtime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.381 ns               ;
+; 7.910 ns                                ; 82.71 MHz ( period = 12.090 ns )                    ; control:inst2|NStime[3]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.381 ns               ;
+; 7.911 ns                                ; 82.72 MHz ( period = 12.089 ns )                    ; control:inst2|cnt[0]      ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.380 ns               ;
+; 7.915 ns                                ; 82.75 MHz ( period = 12.085 ns )                    ; control:inst2|EWtime[7]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.376 ns               ;
+; 7.925 ns                                ; 82.82 MHz ( period = 12.075 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|NStime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.366 ns               ;
+; 7.926 ns                                ; 82.82 MHz ( period = 12.074 ns )                    ; control:inst2|EWtime[7]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.365 ns               ;
+; 7.942 ns                                ; 82.93 MHz ( period = 12.058 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|EWtime[2] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.349 ns               ;
+; 7.942 ns                                ; 82.93 MHz ( period = 12.058 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|NStime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.349 ns               ;
+; 7.943 ns                                ; 82.94 MHz ( period = 12.057 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|NStime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.348 ns               ;
+; 7.950 ns                                ; 82.99 MHz ( period = 12.050 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|EWtime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.341 ns               ;
+; 7.971 ns                                ; 83.13 MHz ( period = 12.029 ns )                    ; control:inst2|EWtime[0]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.320 ns               ;
+; 7.982 ns                                ; 83.21 MHz ( period = 12.018 ns )                    ; control:inst2|EWtime[2]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.309 ns               ;
+; 7.982 ns                                ; 83.21 MHz ( period = 12.018 ns )                    ; control:inst2|EWtime[0]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.309 ns               ;
+; 7.987 ns                                ; 83.24 MHz ( period = 12.013 ns )                    ; control:inst2|NStime[5]   ; control:inst2|NStime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.304 ns               ;
+; 7.991 ns                                ; 83.27 MHz ( period = 12.009 ns )                    ; control:inst2|NStime[0]   ; control:inst2|EWtime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.300 ns               ;
+; 7.993 ns                                ; 83.28 MHz ( period = 12.007 ns )                    ; control:inst2|EWtime[2]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.298 ns               ;
+; 8.008 ns                                ; 83.39 MHz ( period = 11.992 ns )                    ; control:inst2|NStime[7]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.283 ns               ;
+; 8.012 ns                                ; 83.42 MHz ( period = 11.988 ns )                    ; control:inst2|cnt[1]      ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.279 ns               ;
+; 8.027 ns                                ; 83.52 MHz ( period = 11.973 ns )                    ; control:inst2|NStime[3]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.264 ns               ;
+; 8.032 ns                                ; 83.56 MHz ( period = 11.968 ns )                    ; control:inst2|NStime[1]   ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.259 ns               ;
+; 8.038 ns                                ; 83.60 MHz ( period = 11.962 ns )                    ; control:inst2|NStime[3]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.253 ns               ;
+; 8.043 ns                                ; 83.63 MHz ( period = 11.957 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|NStime[3] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.248 ns               ;
+; 8.053 ns                                ; 83.70 MHz ( period = 11.947 ns )                    ; divDigital:inst18|num[6]  ; divDigital:inst18|tempQ ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.238 ns               ;
+; 8.067 ns                                ; 83.80 MHz ( period = 11.933 ns )                    ; control:inst2|NStime[0]   ; control:inst2|EWtime[3] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.224 ns               ;
+; 8.074 ns                                ; 83.85 MHz ( period = 11.926 ns )                    ; control:inst2|EWtime[5]   ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.217 ns               ;
+; 8.079 ns                                ; 83.89 MHz ( period = 11.921 ns )                    ; control:inst2|NStime[0]   ; control:inst2|NStime[3] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.212 ns               ;
+; 8.101 ns                                ; 84.04 MHz ( period = 11.899 ns )                    ; control:inst2|EWtime[5]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.190 ns               ;
+; 8.119 ns                                ; 84.17 MHz ( period = 11.881 ns )                    ; control:inst2|EWtime[7]   ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.172 ns               ;
+; 8.121 ns                                ; 84.18 MHz ( period = 11.879 ns )                    ; control:inst2|NStime[5]   ; control:inst2|EWtime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.170 ns               ;
+; 8.125 ns                                ; 84.21 MHz ( period = 11.875 ns )                    ; control:inst2|NStime[2]   ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.166 ns               ;
+; 8.138 ns                                ; 84.30 MHz ( period = 11.862 ns )                    ; control:inst2|state[1]    ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.153 ns               ;
+; 8.141 ns                                ; 84.32 MHz ( period = 11.859 ns )                    ; control:inst2|EWtime[6]   ; control:inst2|NStime[3] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.150 ns               ;
+; 8.149 ns                                ; 84.38 MHz ( period = 11.851 ns )                    ; control:inst2|state[1]    ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.142 ns               ;
+; 8.196 ns                                ; 84.72 MHz ( period = 11.804 ns )                    ; control:inst2|NStime[6]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.095 ns               ;
+; 8.219 ns                                ; 84.88 MHz ( period = 11.781 ns )                    ; control:inst2|cnt[2]      ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.072 ns               ;
+; 8.223 ns                                ; 84.91 MHz ( period = 11.777 ns )                    ; control:inst2|state[2]    ; control:inst2|EWtime[2] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.068 ns               ;
+; 8.251 ns                                ; 85.11 MHz ( period = 11.749 ns )                    ; control:inst2|NStime[2]   ; control:inst2|NStime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.040 ns               ;
+; 8.267 ns                                ; 85.23 MHz ( period = 11.733 ns )                    ; control:inst2|NStime[1]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 11.024 ns               ;
+; 8.299 ns                                ; 85.46 MHz ( period = 11.701 ns )                    ; control:inst2|EWtime[7]   ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.992 ns               ;
+; 8.307 ns                                ; 85.52 MHz ( period = 11.693 ns )                    ; control:inst2|EWtime[5]   ; control:inst2|NStime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.984 ns               ;
+; 8.316 ns                                ; 85.59 MHz ( period = 11.684 ns )                    ; control:inst2|cnt[3]      ; control:inst2|state[2]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.975 ns               ;
+; 8.317 ns                                ; 85.59 MHz ( period = 11.683 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|NStime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.974 ns               ;
+; 8.318 ns                                ; 85.60 MHz ( period = 11.682 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|NStime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.973 ns               ;
+; 8.326 ns                                ; 85.66 MHz ( period = 11.674 ns )                    ; control:inst2|EWtime[7]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.965 ns               ;
+; 8.332 ns                                ; 85.70 MHz ( period = 11.668 ns )                    ; control:inst2|EWtime[5]   ; control:inst2|EWtime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.959 ns               ;
+; 8.332 ns                                ; 85.70 MHz ( period = 11.668 ns )                    ; control:inst2|NStime[4]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.959 ns               ;
+; 8.332 ns                                ; 85.70 MHz ( period = 11.668 ns )                    ; divDigital:inst18|num[10] ; divDigital:inst18|tempQ ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.959 ns               ;
+; 8.338 ns                                ; 85.75 MHz ( period = 11.662 ns )                    ; control:inst2|cnt[2]      ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.953 ns               ;
+; 8.340 ns                                ; 85.76 MHz ( period = 11.660 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|NStime[3] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.951 ns               ;
+; 8.349 ns                                ; 85.83 MHz ( period = 11.651 ns )                    ; control:inst2|NStime[0]   ; control:inst2|NStime[2] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.942 ns               ;
+; 8.353 ns                                ; 85.86 MHz ( period = 11.647 ns )                    ; control:inst2|state[1]    ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.938 ns               ;
+; 8.353 ns                                ; 85.86 MHz ( period = 11.647 ns )                    ; control:inst2|cnt[4]      ; control:inst2|state[0]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.938 ns               ;
+; 8.355 ns                                ; 85.87 MHz ( period = 11.645 ns )                    ; control:inst2|EWtime[0]   ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.936 ns               ;
+; 8.364 ns                                ; 85.94 MHz ( period = 11.636 ns )                    ; control:inst2|state[1]    ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.927 ns               ;
+; 8.366 ns                                ; 85.95 MHz ( period = 11.634 ns )                    ; control:inst2|EWtime[2]   ; control:inst2|EWtime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.925 ns               ;
+; 8.379 ns                                ; 86.05 MHz ( period = 11.621 ns )                    ; control:inst2|NStime[5]   ; control:inst2|NStime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.912 ns               ;
+; 8.380 ns                                ; 86.06 MHz ( period = 11.620 ns )                    ; control:inst2|NStime[5]   ; control:inst2|NStime[4] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.911 ns               ;
+; 8.382 ns                                ; 86.07 MHz ( period = 11.618 ns )                    ; control:inst2|EWtime[0]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.909 ns               ;
+; 8.384 ns                                ; 86.09 MHz ( period = 11.616 ns )                    ; control:inst2|NStime[1]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.907 ns               ;
+; 8.384 ns                                ; 86.09 MHz ( period = 11.616 ns )                    ; control:inst2|NStime[6]   ; control:inst2|NStime[0] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.907 ns               ;
+; 8.390 ns                                ; 86.13 MHz ( period = 11.610 ns )                    ; control:inst2|EWtime[1]   ; control:inst2|NStime[2] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.901 ns               ;
+; 8.393 ns                                ; 86.15 MHz ( period = 11.607 ns )                    ; control:inst2|EWtime[2]   ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.898 ns               ;
+; 8.395 ns                                ; 86.17 MHz ( period = 11.605 ns )                    ; control:inst2|NStime[1]   ; control:inst2|NStime[7] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.896 ns               ;
+; 8.396 ns                                ; 86.18 MHz ( period = 11.604 ns )                    ; control:inst2|state[1]    ; control:inst2|EWtime[6] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.895 ns               ;
+; 8.410 ns                                ; 86.28 MHz ( period = 11.590 ns )                    ; control:inst2|EWtime[4]   ; control:inst2|NStime[2] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.881 ns               ;
+; 8.435 ns                                ; 86.47 MHz ( period = 11.565 ns )                    ; control:inst2|EWtime[3]   ; control:inst2|EWtime[2] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.856 ns               ;
+; 8.462 ns                                ; 86.67 MHz ( period = 11.538 ns )                    ; control:inst2|EWtime[0]   ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.829 ns               ;
+; 8.472 ns                                ; 86.75 MHz ( period = 11.528 ns )                    ; control:inst2|cnt[4]      ; control:inst2|state[1]  ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.819 ns               ;
+; 8.473 ns                                ; 86.75 MHz ( period = 11.527 ns )                    ; control:inst2|EWtime[2]   ; control:inst2|NStime[1] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.818 ns               ;
+; 8.494 ns                                ; 86.91 MHz ( period = 11.506 ns )                    ; control:inst2|NStime[6]   ; control:inst2|EWtime[5] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.797 ns               ;
+; 8.495 ns                                ; 86.92 MHz ( period = 11.505 ns )                    ; control:inst2|state[0]    ; control:inst2|EWtime[2] ; CLK        ; CLK      ; 20.000 ns                   ; 19.291 ns                 ; 10.796 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                           ;                         ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+---------------------------+-------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'CLK'                                                                                                                                                                                                                      ;
++-----------------------------------------+-----------------------------------------------------+---------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                           ; From                                                ; To                        ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+---------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; 1.410 ns                                ; control:inst2|mode[0]                               ; control:inst2|mode[1]     ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.255 ns                 ;
+; 1.662 ns                                ; control:inst2|mode[1]                               ; control:inst2|mode[2]     ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.507 ns                 ;
+; 1.702 ns                                ; control:inst2|EWtime[0]                             ; control:inst2|EWtime[0]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.547 ns                 ;
+; 1.712 ns                                ; control:inst2|cntLight[1]                           ; control:inst2|cntLight[1] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.557 ns                 ;
+; 1.764 ns                                ; cnt4:inst|tempQ[1]                                  ; cnt4:inst|tempQ[1]        ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.609 ns                 ;
+; 1.917 ns                                ; control:inst2|cntLight[2]                           ; control:inst2|cntLight[2] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.762 ns                 ;
+; 1.936 ns                                ; control:inst2|NStime[4]                             ; control:inst2|NStime[4]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.781 ns                 ;
+; 1.941 ns                                ; control:inst2|key1                                  ; control:inst2|key1        ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.786 ns                 ;
+; 1.956 ns                                ; control:inst2|cntLight[0]                           ; control:inst2|cntLight[0] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.801 ns                 ;
+; 1.960 ns                                ; control:inst2|mode[2]                               ; control:inst2|mode[0]     ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.805 ns                 ;
+; 1.990 ns                                ; cnt4:inst|tempQ[0]                                  ; cnt4:inst|tempQ[0]        ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.835 ns                 ;
+; 1.992 ns                                ; cnt4:inst|tempQ[0]                                  ; cnt4:inst|tempQ[1]        ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.837 ns                 ;
+; 2.005 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[15] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.850 ns                 ;
+; 2.007 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[14] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.852 ns                 ;
+; 2.008 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[9]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.853 ns                 ;
+; 2.013 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|tempQ   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.858 ns                 ;
+; 2.014 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[8]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.859 ns                 ;
+; 2.015 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[13] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 1.860 ns                 ;
+; 2.241 ns                                ; control:inst2|state[2]                              ; control:inst2|state[2]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.086 ns                 ;
+; 2.242 ns                                ; control:inst2|light[3]                              ; control:inst2|light[3]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.087 ns                 ;
+; 2.262 ns                                ; control:inst2|light[2]                              ; control:inst2|light[2]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.107 ns                 ;
+; 2.275 ns                                ; control:inst2|light[5]                              ; control:inst2|light[5]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.120 ns                 ;
+; 2.285 ns                                ; control:inst2|EWtime[4]                             ; control:inst2|EWtime[4]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.130 ns                 ;
+; 2.292 ns                                ; control:inst2|state[2]                              ; control:inst2|light[0]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.137 ns                 ;
+; 2.341 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[14] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.186 ns                 ;
+; 2.342 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[9]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.187 ns                 ;
+; 2.344 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[15] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.189 ns                 ;
+; 2.349 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|tempQ   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.194 ns                 ;
+; 2.351 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[8]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.196 ns                 ;
+; 2.352 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[13] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.197 ns                 ;
+; 2.404 ns                                ; control:inst2|cntLight[3]                           ; control:inst2|cntLight[3] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.249 ns                 ;
+; 2.604 ns                                ; control:inst2|cntLight[1]                           ; control:inst2|light[0]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.449 ns                 ;
+; 2.634 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[0]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.479 ns                 ;
+; 2.678 ns                                ; control:inst2|cntLight[1]                           ; control:inst2|cntLight[3] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.523 ns                 ;
+; 2.715 ns                                ; control:inst2|cntLight[3]                           ; control:inst2|cntLight[1] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.560 ns                 ;
+; 2.729 ns                                ; control:inst2|cntLight[1]                           ; control:inst2|cntLight[2] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.574 ns                 ;
+; 2.850 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[1]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.695 ns                 ;
+; 2.903 ns                                ; control:inst2|state[2]                              ; control:inst2|light[3]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.748 ns                 ;
+; 2.978 ns                                ; control:inst2|state[0]                              ; control:inst2|light[4]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.823 ns                 ;
+; 3.091 ns                                ; divDigital:inst18|num[1]                            ; divDigital:inst18|num[1]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.936 ns                 ;
+; 3.107 ns                                ; control:inst2|cnt[0]                                ; control:inst2|cnt[0]      ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 2.952 ns                 ;
+; 3.160 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[0]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.005 ns                 ;
+; 3.161 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[9]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.006 ns                 ;
+; 3.164 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[14] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.009 ns                 ;
+; 3.167 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[15] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.012 ns                 ;
+; 3.173 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|tempQ   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.018 ns                 ;
+; 3.175 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[8]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.020 ns                 ;
+; 3.176 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[13] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.021 ns                 ;
+; 3.203 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[1]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.048 ns                 ;
+; 3.203 ns                                ; control:inst2|EWtime[5]                             ; control:inst2|EWtime[6]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.048 ns                 ;
+; 3.269 ns                                ; control:inst2|cnt[2]                                ; control:inst2|cnt[2]      ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.114 ns                 ;
+; 3.296 ns                                ; div:inst4|num[7]                                    ; div:inst4|num[0]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.141 ns                 ;
+; 3.305 ns                                ; control:inst2|state[2]                              ; control:inst2|EWtime[0]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.150 ns                 ;
+; 3.308 ns                                ; div:inst4|num[6]                                    ; div:inst4|num[0]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.153 ns                 ;
+; 3.319 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[0]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.164 ns                 ;
+; 3.474 ns                                ; control:inst2|state[2]                              ; control:inst2|NStime[1]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.319 ns                 ;
+; 3.474 ns                                ; control:inst2|state[2]                              ; control:inst2|NStime[7]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.319 ns                 ;
+; 3.474 ns                                ; control:inst2|state[2]                              ; control:inst2|NStime[4]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.319 ns                 ;
+; 3.474 ns                                ; control:inst2|state[2]                              ; control:inst2|NStime[6]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.319 ns                 ;
+; 3.483 ns                                ; control:inst2|state[2]                              ; control:inst2|light[1]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.328 ns                 ;
+; 3.487 ns                                ; control:inst2|state[2]                              ; control:inst2|light[4]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.332 ns                 ;
+; 3.512 ns                                ; control:inst2|state[2]                              ; control:inst2|light[5]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.357 ns                 ;
+; 3.531 ns                                ; control:inst2|EWtime[5]                             ; control:inst2|EWtime[7]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.376 ns                 ;
+; 3.533 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[10] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.378 ns                 ;
+; 3.570 ns                                ; control:inst2|EWtime[4]                             ; control:inst2|EWtime[6]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.415 ns                 ;
+; 3.575 ns                                ; divDigital:inst18|num[0]                            ; divDigital:inst18|num[0]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.420 ns                 ;
+; 3.581 ns                                ; control:inst2|NStime[2]                             ; control:inst2|NStime[2]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.426 ns                 ;
+; 3.591 ns                                ; control:inst2|key1                                  ; control:inst2|mode[1]     ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.436 ns                 ;
+; 3.591 ns                                ; control:inst2|key1                                  ; control:inst2|mode[2]     ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.436 ns                 ;
+; 3.591 ns                                ; control:inst2|key1                                  ; control:inst2|mode[0]     ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.436 ns                 ;
+; 3.601 ns                                ; control:inst2|cnt[1]                                ; control:inst2|cnt[1]      ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.446 ns                 ;
+; 3.635 ns                                ; control:inst2|state[2]                              ; control:inst2|NStime[5]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.480 ns                 ;
+; 3.669 ns                                ; div:inst4|num[5]                                    ; div:inst4|num[0]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.514 ns                 ;
+; 3.724 ns                                ; control:inst2|EWtime[6]                             ; control:inst2|EWtime[6]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.569 ns                 ;
+; 3.767 ns                                ; div:inst4|num[7]                                    ; div:inst4|num[2]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.612 ns                 ;
+; 3.767 ns                                ; div:inst4|num[7]                                    ; div:inst4|num[7]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.612 ns                 ;
+; 3.770 ns                                ; div:inst4|num[7]                                    ; div:inst4|num[1]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.615 ns                 ;
+; 3.772 ns                                ; div:inst4|num[7]                                    ; div:inst4|num[5]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.617 ns                 ;
+; 3.779 ns                                ; div:inst4|num[6]                                    ; div:inst4|num[2]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.624 ns                 ;
+; 3.779 ns                                ; div:inst4|num[6]                                    ; div:inst4|num[7]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.624 ns                 ;
+; 3.782 ns                                ; div:inst4|num[6]                                    ; div:inst4|num[1]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.627 ns                 ;
+; 3.784 ns                                ; div:inst4|num[6]                                    ; div:inst4|num[5]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.629 ns                 ;
+; 3.872 ns                                ; control:inst2|state[0]                              ; control:inst2|light[2]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.717 ns                 ;
+; 3.895 ns                                ; control:inst2|EWtime[1]                             ; control:inst2|EWtime[1]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.740 ns                 ;
+; 3.903 ns                                ; control:inst2|EWtime[4]                             ; control:inst2|EWtime[7]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.748 ns                 ;
+; 3.905 ns                                ; divDigital:inst18|num[0]                            ; divDigital:inst18|num[1]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.750 ns                 ;
+; 3.930 ns                                ; control:inst2|cnt[1]                                ; control:inst2|cnt[2]      ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.775 ns                 ;
+; 3.950 ns                                ; control:inst2|cntLight[0]                           ; control:inst2|light[1]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.795 ns                 ;
+; 3.971 ns                                ; control:inst2|state[2]                              ; control:inst2|NStime[2]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.816 ns                 ;
+; 3.971 ns                                ; control:inst2|state[2]                              ; control:inst2|NStime[0]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.816 ns                 ;
+; 3.998 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[1]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.843 ns                 ;
+; 4.019 ns                                ; control:inst2|cnt[0]                                ; control:inst2|cnt[2]      ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.864 ns                 ;
+; 4.025 ns                                ; div:inst4|num[8]                                    ; div:inst4|num[0]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.870 ns                 ;
+; 4.043 ns                                ; control:inst2|cntLight[1]                           ; control:inst2|light[4]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.888 ns                 ;
+; 4.066 ns                                ; control:inst2|EWtime[6]                             ; control:inst2|EWtime[7]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.911 ns                 ;
+; 4.117 ns                                ; control:inst2|state[2]                              ; control:inst2|EWtime[3]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.962 ns                 ;
+; 4.117 ns                                ; control:inst2|state[2]                              ; control:inst2|EWtime[7]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.962 ns                 ;
+; 4.117 ns                                ; control:inst2|state[2]                              ; control:inst2|NStime[3]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.962 ns                 ;
+; 4.120 ns                                ; control:inst2|state[2]                              ; control:inst2|EWtime[6]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.965 ns                 ;
+; 4.120 ns                                ; control:inst2|state[2]                              ; control:inst2|EWtime[2]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.965 ns                 ;
+; 4.120 ns                                ; control:inst2|state[2]                              ; control:inst2|EWtime[5]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.965 ns                 ;
+; 4.120 ns                                ; control:inst2|state[2]                              ; control:inst2|EWtime[4]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.965 ns                 ;
+; 4.126 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[3]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.971 ns                 ;
+; 4.126 ns                                ; control:inst2|mode[2]                               ; control:inst2|state[0]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.971 ns                 ;
+; 4.132 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[4]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.977 ns                 ;
+; 4.136 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[11] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.981 ns                 ;
+; 4.139 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[5]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.984 ns                 ;
+; 4.140 ns                                ; div:inst4|num[5]                                    ; div:inst4|num[2]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.985 ns                 ;
+; 4.140 ns                                ; div:inst4|num[5]                                    ; div:inst4|num[7]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.985 ns                 ;
+; 4.141 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[7]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.986 ns                 ;
+; 4.143 ns                                ; div:inst4|num[5]                                    ; div:inst4|num[1]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.988 ns                 ;
+; 4.145 ns                                ; div:inst4|num[5]                                    ; div:inst4|num[5]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.990 ns                 ;
+; 4.148 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[6]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.993 ns                 ;
+; 4.151 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[2]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.996 ns                 ;
+; 4.152 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[12] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 3.997 ns                 ;
+; 4.182 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[10] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.027 ns                 ;
+; 4.241 ns                                ; div:inst4|num[8]                                    ; div:inst4|num[8]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.086 ns                 ;
+; 4.258 ns                                ; div:inst4|num[6]                                    ; div:inst4|num[6]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.103 ns                 ;
+; 4.260 ns                                ; divDigital:inst18|num[8]                            ; divDigital:inst18|num[9]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.105 ns                 ;
+; 4.263 ns                                ; divDigital:inst18|num[8]                            ; divDigital:inst18|num[14] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.108 ns                 ;
+; 4.266 ns                                ; divDigital:inst18|num[8]                            ; divDigital:inst18|num[15] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.111 ns                 ;
+; 4.272 ns                                ; divDigital:inst18|num[8]                            ; divDigital:inst18|tempQ   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.117 ns                 ;
+; 4.274 ns                                ; divDigital:inst18|num[8]                            ; divDigital:inst18|num[8]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.119 ns                 ;
+; 4.275 ns                                ; divDigital:inst18|num[8]                            ; divDigital:inst18|num[13] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.120 ns                 ;
+; 4.337 ns                                ; control:inst2|cntLight[3]                           ; control:inst2|light[1]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.182 ns                 ;
+; 4.339 ns                                ; div:inst4|num[7]                                    ; div:inst4|num[8]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.184 ns                 ;
+; 4.340 ns                                ; div:inst4|num[7]                                    ; div:inst4|num[9]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.185 ns                 ;
+; 4.343 ns                                ; div:inst4|num[7]                                    ; div:inst4|num[3]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.188 ns                 ;
+; 4.344 ns                                ; div:inst4|num[7]                                    ; div:inst4|num[6]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.189 ns                 ;
+; 4.349 ns                                ; div:inst4|num[7]                                    ; div:inst4|num[4]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.194 ns                 ;
+; 4.351 ns                                ; div:inst4|num[6]                                    ; div:inst4|num[8]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.196 ns                 ;
+; 4.352 ns                                ; div:inst4|num[6]                                    ; div:inst4|num[9]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.197 ns                 ;
+; 4.352 ns                                ; control:inst2|cntLight[2]                           ; control:inst2|cntLight[3] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.197 ns                 ;
+; 4.355 ns                                ; div:inst4|num[6]                                    ; div:inst4|num[3]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.200 ns                 ;
+; 4.361 ns                                ; div:inst4|num[6]                                    ; div:inst4|num[4]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.206 ns                 ;
+; 4.381 ns                                ; div:inst4|num[9]                                    ; div:inst4|num[9]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.226 ns                 ;
+; 4.386 ns                                ; control:inst2|cnt[0]                                ; control:inst2|cnt[1]      ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.231 ns                 ;
+; 4.393 ns                                ; div:inst4|num[9]                                    ; div:inst4|num[0]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.238 ns                 ;
+; 4.418 ns                                ; divDigital:inst18|num[8]                            ; divDigital:inst18|num[0]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.263 ns                 ;
+; 4.496 ns                                ; div:inst4|num[8]                                    ; div:inst4|num[2]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.341 ns                 ;
+; 4.496 ns                                ; div:inst4|num[8]                                    ; div:inst4|num[7]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.341 ns                 ;
+; 4.497 ns                                ; div:inst4|num[4]                                    ; div:inst4|num[4]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.342 ns                 ;
+; 4.499 ns                                ; div:inst4|num[8]                                    ; div:inst4|num[1]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.344 ns                 ;
+; 4.501 ns                                ; div:inst4|num[8]                                    ; div:inst4|num[5]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.346 ns                 ;
+; 4.539 ns                                ; control:inst2|state[1]                              ; control:inst2|state[2]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.384 ns                 ;
+; 4.547 ns                                ; divDigital:inst18|num[15]                           ; divDigital:inst18|num[10] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.392 ns                 ;
+; 4.552 ns                                ; div:inst4|num[4]                                    ; div:inst4|num[0]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.397 ns                 ;
+; 4.596 ns                                ; control:inst2|state[0]                              ; control:inst2|light[1]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.441 ns                 ;
+; 4.625 ns                                ; control:inst2|cntLight[2]                           ; control:inst2|cntLight[1] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.470 ns                 ;
+; 4.628 ns                                ; control:inst2|state[0]                              ; control:inst2|state[0]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.473 ns                 ;
+; 4.637 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[7]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.482 ns                 ;
+; 4.638 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[5]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.483 ns                 ;
+; 4.640 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[4]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.485 ns                 ;
+; 4.644 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[2]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.489 ns                 ;
+; 4.644 ns                                ; divDigital:inst18|num[9]                            ; divDigital:inst18|num[12] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.489 ns                 ;
+; 4.657 ns                                ; control:inst2|cntLight[3]                           ; control:inst2|light[0]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.502 ns                 ;
+; 4.703 ns                                ; control:inst2|NStime[0]                             ; control:inst2|NStime[2]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.548 ns                 ;
+; 4.712 ns                                ; div:inst4|num[5]                                    ; div:inst4|num[8]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.557 ns                 ;
+; 4.713 ns                                ; div:inst4|num[5]                                    ; div:inst4|num[9]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.558 ns                 ;
+; 4.716 ns                                ; div:inst4|num[5]                                    ; div:inst4|num[3]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.561 ns                 ;
+; 4.717 ns                                ; div:inst4|num[5]                                    ; div:inst4|num[6]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.562 ns                 ;
+; 4.719 ns                                ; control:inst2|cntLight[2]                           ; control:inst2|light[5]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.564 ns                 ;
+; 4.722 ns                                ; div:inst4|num[5]                                    ; div:inst4|num[4]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.567 ns                 ;
+; 4.771 ns                                ; control:inst2|cntLight[0]                           ; control:inst2|cntLight[1] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.616 ns                 ;
+; 4.771 ns                                ; control:inst2|NStime[5]                             ; control:inst2|NStime[5]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.616 ns                 ;
+; 4.797 ns                                ; control:inst2|mode[1]                               ; control:inst2|state[2]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.642 ns                 ;
+; 4.816 ns                                ; div:inst4|num[7]                                    ; div:inst4|tempQ           ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.661 ns                 ;
+; 4.828 ns                                ; div:inst4|num[6]                                    ; div:inst4|tempQ           ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.673 ns                 ;
+; 4.844 ns                                ; control:inst2|cntLight[2]                           ; control:inst2|light[4]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.689 ns                 ;
+; 4.851 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[11] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.696 ns                 ;
+; 4.853 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[3]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.698 ns                 ;
+; 4.863 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[6]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.708 ns                 ;
+; 4.864 ns                                ; div:inst4|num[9]                                    ; div:inst4|num[2]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.709 ns                 ;
+; 4.864 ns                                ; div:inst4|num[9]                                    ; div:inst4|num[7]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.709 ns                 ;
+; 4.865 ns                                ; control:inst2|state[0]                              ; control:inst2|light[0]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.710 ns                 ;
+; 4.867 ns                                ; div:inst4|num[9]                                    ; div:inst4|num[1]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.712 ns                 ;
+; 4.869 ns                                ; div:inst4|num[9]                                    ; div:inst4|num[5]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.714 ns                 ;
+; 4.880 ns                                ; control:inst2|EWtime[2]                             ; control:inst2|state[2]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.725 ns                 ;
+; 4.891 ns                                ; control:inst2|EWtime[0]                             ; control:inst2|state[2]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.736 ns                 ;
+; 4.902 ns                                ; control:inst2|state[1]                              ; control:inst2|state[1]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.747 ns                 ;
+; 4.947 ns                                ; control:inst2|EWtime[7]                             ; control:inst2|state[2]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.792 ns                 ;
+; 4.962 ns                                ; control:inst2|mode[1]                               ; control:inst2|state[0]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.807 ns                 ;
+; 4.978 ns                                ; control:inst2|state[2]                              ; control:inst2|light[2]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.823 ns                 ;
+; 4.995 ns                                ; control:inst2|state[1]                              ; control:inst2|EWtime[1]   ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.840 ns                 ;
+; 5.004 ns                                ; control:inst2|state[0]                              ; control:inst2|light[3]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.849 ns                 ;
+; 5.009 ns                                ; control:inst2|cntLight[0]                           ; control:inst2|cntLight[3] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.854 ns                 ;
+; 5.023 ns                                ; div:inst4|num[4]                                    ; div:inst4|num[2]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.868 ns                 ;
+; 5.023 ns                                ; div:inst4|num[4]                                    ; div:inst4|num[7]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.868 ns                 ;
+; 5.026 ns                                ; div:inst4|num[4]                                    ; div:inst4|num[1]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.871 ns                 ;
+; 5.028 ns                                ; div:inst4|num[4]                                    ; div:inst4|num[5]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.873 ns                 ;
+; 5.035 ns                                ; control:inst2|state[2]                              ; control:inst2|cntLight[0] ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.880 ns                 ;
+; 5.051 ns                                ; div:inst4|num[3]                                    ; div:inst4|num[3]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.896 ns                 ;
+; 5.063 ns                                ; control:inst2|state[1]                              ; control:inst2|light[0]    ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.908 ns                 ;
+; 5.068 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[4]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.913 ns                 ;
+; 5.069 ns                                ; div:inst4|num[8]                                    ; div:inst4|num[9]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.914 ns                 ;
+; 5.070 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[5]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.915 ns                 ;
+; 5.072 ns                                ; divDigital:inst18|num[14]                           ; divDigital:inst18|num[7]  ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.917 ns                 ;
+; 5.072 ns                                ; div:inst4|num[8]                                    ; div:inst4|num[3]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.917 ns                 ;
+; 5.073 ns                                ; div:inst4|num[8]                                    ; div:inst4|num[6]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.918 ns                 ;
+; 5.078 ns                                ; div:inst4|num[8]                                    ; div:inst4|num[4]          ; CLK        ; CLK      ; 0.000 ns                   ; -0.155 ns                  ; 4.923 ns                 ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                           ;            ;          ;                            ;                            ;                          ;
++-----------------------------------------+-----------------------------------------------------+---------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------+
+; tsu                                                                              ;
++-------+--------------+------------+-------+---------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                        ; To Clock ;
++-------+--------------+------------+-------+---------------------------+----------+
+; N/A   ; None         ; -2.251 ns  ; flash ; control:inst2|state[0]    ; CLK      ;
+; N/A   ; None         ; -2.370 ns  ; flash ; control:inst2|state[1]    ; CLK      ;
+; N/A   ; None         ; -3.352 ns  ; flash ; control:inst2|state[2]    ; CLK      ;
+; N/A   ; None         ; -3.701 ns  ; RST   ; control:inst2|cntLight[2] ; CLK      ;
+; N/A   ; None         ; -4.735 ns  ; flash ; control:inst2|mode[0]     ; CLK      ;
+; N/A   ; None         ; -4.735 ns  ; flash ; control:inst2|mode[2]     ; CLK      ;
+; N/A   ; None         ; -4.735 ns  ; flash ; control:inst2|mode[1]     ; CLK      ;
+; N/A   ; None         ; -4.908 ns  ; RST   ; control:inst2|cntLight[1] ; CLK      ;
+; N/A   ; None         ; -6.255 ns  ; RST   ; control:inst2|cnt[3]      ; CLK      ;
+; N/A   ; None         ; -6.255 ns  ; RST   ; control:inst2|cnt[4]      ; CLK      ;
+; N/A   ; None         ; -6.255 ns  ; RST   ; control:inst2|cnt[5]      ; CLK      ;
+; N/A   ; None         ; -6.255 ns  ; RST   ; control:inst2|cnt[6]      ; CLK      ;
+; N/A   ; None         ; -6.255 ns  ; RST   ; control:inst2|key1        ; CLK      ;
+; N/A   ; None         ; -6.257 ns  ; RST   ; control:inst2|cntLight[3] ; CLK      ;
+; N/A   ; None         ; -6.318 ns  ; flash ; control:inst2|cnt[6]      ; CLK      ;
+; N/A   ; None         ; -6.318 ns  ; flash ; control:inst2|key1        ; CLK      ;
+; N/A   ; None         ; -6.318 ns  ; RST   ; control:inst2|cntLight[0] ; CLK      ;
+; N/A   ; None         ; -6.320 ns  ; flash ; control:inst2|cnt[3]      ; CLK      ;
+; N/A   ; None         ; -6.322 ns  ; flash ; control:inst2|cnt[4]      ; CLK      ;
+; N/A   ; None         ; -6.333 ns  ; flash ; control:inst2|cnt[5]      ; CLK      ;
+; N/A   ; None         ; -6.406 ns  ; flash ; control:inst2|cnt[1]      ; CLK      ;
+; N/A   ; None         ; -6.715 ns  ; flash ; control:inst2|cnt[2]      ; CLK      ;
+; N/A   ; None         ; -6.722 ns  ; flash ; control:inst2|cnt[0]      ; CLK      ;
+; N/A   ; None         ; -6.933 ns  ; RST   ; control:inst2|cnt[0]      ; CLK      ;
+; N/A   ; None         ; -6.933 ns  ; RST   ; control:inst2|cnt[2]      ; CLK      ;
+; N/A   ; None         ; -6.933 ns  ; RST   ; control:inst2|cnt[1]      ; CLK      ;
++-------+--------------+------------+-------+---------------------------+----------+
+
+
++---------------------------------------------------------------------------------+
+; tco                                                                             ;
++-------+--------------+------------+-------------------------+------+------------+
+; Slack ; Required tco ; Actual tco ; From                    ; To   ; From Clock ;
++-------+--------------+------------+-------------------------+------+------------+
+; N/A   ; None         ; 27.697 ns  ; control:inst2|EWtime[4] ; D[1] ; CLK        ;
+; N/A   ; None         ; 27.682 ns  ; control:inst2|EWtime[4] ; D[3] ; CLK        ;
+; N/A   ; None         ; 27.532 ns  ; control:inst2|EWtime[4] ; D[2] ; CLK        ;
+; N/A   ; None         ; 27.403 ns  ; control:inst2|EWtime[4] ; D[5] ; CLK        ;
+; N/A   ; None         ; 27.368 ns  ; control:inst2|EWtime[4] ; D[6] ; CLK        ;
+; N/A   ; None         ; 27.307 ns  ; control:inst2|EWtime[4] ; D[4] ; CLK        ;
+; N/A   ; None         ; 27.096 ns  ; control:inst2|EWtime[6] ; D[1] ; CLK        ;
+; N/A   ; None         ; 27.084 ns  ; control:inst2|EWtime[6] ; D[3] ; CLK        ;
+; N/A   ; None         ; 26.934 ns  ; control:inst2|EWtime[6] ; D[2] ; CLK        ;
+; N/A   ; None         ; 26.373 ns  ; control:inst2|EWtime[4] ; D[0] ; CLK        ;
+; N/A   ; None         ; 26.365 ns  ; control:inst2|EWtime[1] ; D[3] ; CLK        ;
+; N/A   ; None         ; 26.364 ns  ; control:inst2|EWtime[6] ; D[5] ; CLK        ;
+; N/A   ; None         ; 26.356 ns  ; control:inst2|EWtime[1] ; D[1] ; CLK        ;
+; N/A   ; None         ; 26.319 ns  ; control:inst2|EWtime[6] ; D[6] ; CLK        ;
+; N/A   ; None         ; 26.264 ns  ; control:inst2|EWtime[6] ; D[4] ; CLK        ;
+; N/A   ; None         ; 26.219 ns  ; control:inst2|EWtime[1] ; D[2] ; CLK        ;
+; N/A   ; None         ; 25.940 ns  ; control:inst2|NStime[1] ; D[3] ; CLK        ;
+; N/A   ; None         ; 25.931 ns  ; control:inst2|NStime[1] ; D[1] ; CLK        ;
+; N/A   ; None         ; 25.926 ns  ; control:inst2|EWtime[5] ; D[3] ; CLK        ;
+; N/A   ; None         ; 25.917 ns  ; control:inst2|EWtime[5] ; D[1] ; CLK        ;
+; N/A   ; None         ; 25.794 ns  ; control:inst2|NStime[1] ; D[2] ; CLK        ;
+; N/A   ; None         ; 25.780 ns  ; control:inst2|EWtime[5] ; D[2] ; CLK        ;
+; N/A   ; None         ; 25.773 ns  ; control:inst2|EWtime[6] ; D[0] ; CLK        ;
+; N/A   ; None         ; 25.706 ns  ; control:inst2|NStime[0] ; D[1] ; CLK        ;
+; N/A   ; None         ; 25.691 ns  ; control:inst2|NStime[0] ; D[3] ; CLK        ;
+; N/A   ; None         ; 25.684 ns  ; control:inst2|state[1]  ; NSR  ; CLK        ;
+; N/A   ; None         ; 25.614 ns  ; control:inst2|EWtime[2] ; D[1] ; CLK        ;
+; N/A   ; None         ; 25.602 ns  ; control:inst2|EWtime[2] ; D[3] ; CLK        ;
+; N/A   ; None         ; 25.586 ns  ; control:inst2|EWtime[0] ; D[1] ; CLK        ;
+; N/A   ; None         ; 25.571 ns  ; control:inst2|EWtime[0] ; D[3] ; CLK        ;
+; N/A   ; None         ; 25.541 ns  ; control:inst2|NStime[0] ; D[2] ; CLK        ;
+; N/A   ; None         ; 25.452 ns  ; control:inst2|EWtime[2] ; D[2] ; CLK        ;
+; N/A   ; None         ; 25.421 ns  ; control:inst2|EWtime[0] ; D[2] ; CLK        ;
+; N/A   ; None         ; 25.412 ns  ; control:inst2|NStime[0] ; D[5] ; CLK        ;
+; N/A   ; None         ; 25.399 ns  ; control:inst2|NStime[4] ; D[1] ; CLK        ;
+; N/A   ; None         ; 25.398 ns  ; control:inst2|EWtime[3] ; D[1] ; CLK        ;
+; N/A   ; None         ; 25.391 ns  ; control:inst2|EWtime[3] ; D[3] ; CLK        ;
+; N/A   ; None         ; 25.389 ns  ; control:inst2|state[1]  ; NSY  ; CLK        ;
+; N/A   ; None         ; 25.384 ns  ; control:inst2|NStime[4] ; D[3] ; CLK        ;
+; N/A   ; None         ; 25.377 ns  ; control:inst2|NStime[0] ; D[6] ; CLK        ;
+; N/A   ; None         ; 25.316 ns  ; control:inst2|NStime[0] ; D[4] ; CLK        ;
+; N/A   ; None         ; 25.292 ns  ; control:inst2|EWtime[0] ; D[5] ; CLK        ;
+; N/A   ; None         ; 25.257 ns  ; control:inst2|EWtime[0] ; D[6] ; CLK        ;
+; N/A   ; None         ; 25.244 ns  ; control:inst2|EWtime[3] ; D[2] ; CLK        ;
+; N/A   ; None         ; 25.234 ns  ; control:inst2|NStime[4] ; D[2] ; CLK        ;
+; N/A   ; None         ; 25.228 ns  ; control:inst2|EWtime[7] ; D[1] ; CLK        ;
+; N/A   ; None         ; 25.221 ns  ; control:inst2|EWtime[7] ; D[3] ; CLK        ;
+; N/A   ; None         ; 25.203 ns  ; control:inst2|EWtime[1] ; D[5] ; CLK        ;
+; N/A   ; None         ; 25.196 ns  ; control:inst2|EWtime[0] ; D[4] ; CLK        ;
+; N/A   ; None         ; 25.194 ns  ; control:inst2|NStime[2] ; D[1] ; CLK        ;
+; N/A   ; None         ; 25.182 ns  ; control:inst2|NStime[2] ; D[3] ; CLK        ;
+; N/A   ; None         ; 25.142 ns  ; control:inst2|EWtime[1] ; D[6] ; CLK        ;
+; N/A   ; None         ; 25.105 ns  ; control:inst2|NStime[4] ; D[5] ; CLK        ;
+; N/A   ; None         ; 25.100 ns  ; control:inst2|EWtime[1] ; D[4] ; CLK        ;
+; N/A   ; None         ; 25.074 ns  ; control:inst2|EWtime[7] ; D[2] ; CLK        ;
+; N/A   ; None         ; 25.070 ns  ; control:inst2|NStime[4] ; D[6] ; CLK        ;
+; N/A   ; None         ; 25.049 ns  ; control:inst2|EWtime[1] ; D[0] ; CLK        ;
+; N/A   ; None         ; 25.032 ns  ; control:inst2|NStime[2] ; D[2] ; CLK        ;
+; N/A   ; None         ; 25.009 ns  ; control:inst2|NStime[4] ; D[4] ; CLK        ;
+; N/A   ; None         ; 24.882 ns  ; control:inst2|EWtime[2] ; D[5] ; CLK        ;
+; N/A   ; None         ; 24.837 ns  ; control:inst2|EWtime[2] ; D[6] ; CLK        ;
+; N/A   ; None         ; 24.782 ns  ; control:inst2|EWtime[2] ; D[4] ; CLK        ;
+; N/A   ; None         ; 24.778 ns  ; control:inst2|NStime[1] ; D[5] ; CLK        ;
+; N/A   ; None         ; 24.768 ns  ; control:inst2|NStime[7] ; D[1] ; CLK        ;
+; N/A   ; None         ; 24.764 ns  ; control:inst2|EWtime[5] ; D[5] ; CLK        ;
+; N/A   ; None         ; 24.761 ns  ; control:inst2|NStime[7] ; D[3] ; CLK        ;
+; N/A   ; None         ; 24.717 ns  ; control:inst2|NStime[1] ; D[6] ; CLK        ;
+; N/A   ; None         ; 24.703 ns  ; control:inst2|EWtime[5] ; D[6] ; CLK        ;
+; N/A   ; None         ; 24.675 ns  ; control:inst2|NStime[1] ; D[4] ; CLK        ;
+; N/A   ; None         ; 24.661 ns  ; control:inst2|EWtime[5] ; D[4] ; CLK        ;
+; N/A   ; None         ; 24.624 ns  ; control:inst2|NStime[1] ; D[0] ; CLK        ;
+; N/A   ; None         ; 24.622 ns  ; control:inst2|state[1]  ; EWY  ; CLK        ;
+; N/A   ; None         ; 24.614 ns  ; control:inst2|NStime[7] ; D[2] ; CLK        ;
+; N/A   ; None         ; 24.610 ns  ; control:inst2|EWtime[5] ; D[0] ; CLK        ;
+; N/A   ; None         ; 24.595 ns  ; control:inst2|state[1]  ; EWR  ; CLK        ;
+; N/A   ; None         ; 24.462 ns  ; control:inst2|NStime[2] ; D[5] ; CLK        ;
+; N/A   ; None         ; 24.445 ns  ; control:inst2|state[0]  ; NSY  ; CLK        ;
+; N/A   ; None         ; 24.417 ns  ; control:inst2|NStime[2] ; D[6] ; CLK        ;
+; N/A   ; None         ; 24.382 ns  ; control:inst2|NStime[0] ; D[0] ; CLK        ;
+; N/A   ; None         ; 24.362 ns  ; control:inst2|NStime[2] ; D[4] ; CLK        ;
+; N/A   ; None         ; 24.291 ns  ; control:inst2|EWtime[2] ; D[0] ; CLK        ;
+; N/A   ; None         ; 24.262 ns  ; control:inst2|EWtime[0] ; D[0] ; CLK        ;
+; N/A   ; None         ; 24.259 ns  ; control:inst2|NStime[3] ; D[1] ; CLK        ;
+; N/A   ; None         ; 24.252 ns  ; control:inst2|NStime[3] ; D[3] ; CLK        ;
+; N/A   ; None         ; 24.198 ns  ; control:inst2|state[2]  ; NSR  ; CLK        ;
+; N/A   ; None         ; 24.169 ns  ; control:inst2|EWtime[3] ; D[5] ; CLK        ;
+; N/A   ; None         ; 24.116 ns  ; control:inst2|EWtime[3] ; D[6] ; CLK        ;
+; N/A   ; None         ; 24.105 ns  ; control:inst2|NStime[6] ; D[1] ; CLK        ;
+; N/A   ; None         ; 24.105 ns  ; control:inst2|NStime[3] ; D[2] ; CLK        ;
+; N/A   ; None         ; 24.093 ns  ; control:inst2|NStime[6] ; D[3] ; CLK        ;
+; N/A   ; None         ; 24.075 ns  ; control:inst2|NStime[4] ; D[0] ; CLK        ;
+; N/A   ; None         ; 24.073 ns  ; control:inst2|EWtime[3] ; D[0] ; CLK        ;
+; N/A   ; None         ; 24.066 ns  ; control:inst2|EWtime[3] ; D[4] ; CLK        ;
+; N/A   ; None         ; 23.999 ns  ; control:inst2|EWtime[7] ; D[5] ; CLK        ;
+; N/A   ; None         ; 23.946 ns  ; control:inst2|EWtime[7] ; D[6] ; CLK        ;
+; N/A   ; None         ; 23.943 ns  ; control:inst2|NStime[6] ; D[2] ; CLK        ;
+; N/A   ; None         ; 23.907 ns  ; control:inst2|state[2]  ; NSY  ; CLK        ;
+; N/A   ; None         ; 23.903 ns  ; control:inst2|EWtime[7] ; D[0] ; CLK        ;
+; N/A   ; None         ; 23.896 ns  ; control:inst2|EWtime[7] ; D[4] ; CLK        ;
+; N/A   ; None         ; 23.871 ns  ; control:inst2|NStime[2] ; D[0] ; CLK        ;
+; N/A   ; None         ; 23.678 ns  ; control:inst2|state[0]  ; EWY  ; CLK        ;
+; N/A   ; None         ; 23.607 ns  ; control:inst2|NStime[5] ; D[3] ; CLK        ;
+; N/A   ; None         ; 23.598 ns  ; control:inst2|NStime[5] ; D[1] ; CLK        ;
+; N/A   ; None         ; 23.598 ns  ; control:inst2|state[1]  ; NSG  ; CLK        ;
+; N/A   ; None         ; 23.539 ns  ; control:inst2|NStime[7] ; D[5] ; CLK        ;
+; N/A   ; None         ; 23.486 ns  ; control:inst2|NStime[7] ; D[6] ; CLK        ;
+; N/A   ; None         ; 23.461 ns  ; control:inst2|NStime[5] ; D[2] ; CLK        ;
+; N/A   ; None         ; 23.443 ns  ; control:inst2|NStime[7] ; D[0] ; CLK        ;
+; N/A   ; None         ; 23.436 ns  ; control:inst2|NStime[7] ; D[4] ; CLK        ;
+; N/A   ; None         ; 23.373 ns  ; control:inst2|NStime[6] ; D[5] ; CLK        ;
+; N/A   ; None         ; 23.328 ns  ; control:inst2|NStime[6] ; D[6] ; CLK        ;
+; N/A   ; None         ; 23.273 ns  ; control:inst2|NStime[6] ; D[4] ; CLK        ;
+; N/A   ; None         ; 23.140 ns  ; control:inst2|state[2]  ; EWY  ; CLK        ;
+; N/A   ; None         ; 23.109 ns  ; control:inst2|state[2]  ; EWR  ; CLK        ;
+; N/A   ; None         ; 23.036 ns  ; control:inst2|state[1]  ; EWG  ; CLK        ;
+; N/A   ; None         ; 23.030 ns  ; control:inst2|NStime[3] ; D[5] ; CLK        ;
+; N/A   ; None         ; 22.977 ns  ; control:inst2|NStime[3] ; D[6] ; CLK        ;
+; N/A   ; None         ; 22.934 ns  ; control:inst2|NStime[3] ; D[0] ; CLK        ;
+; N/A   ; None         ; 22.927 ns  ; control:inst2|NStime[3] ; D[4] ; CLK        ;
+; N/A   ; None         ; 22.782 ns  ; control:inst2|NStime[6] ; D[0] ; CLK        ;
+; N/A   ; None         ; 22.719 ns  ; control:inst2|state[0]  ; EWR  ; CLK        ;
+; N/A   ; None         ; 22.477 ns  ; control:inst2|state[0]  ; NSR  ; CLK        ;
+; N/A   ; None         ; 22.445 ns  ; control:inst2|NStime[5] ; D[5] ; CLK        ;
+; N/A   ; None         ; 22.384 ns  ; control:inst2|NStime[5] ; D[6] ; CLK        ;
+; N/A   ; None         ; 22.342 ns  ; control:inst2|NStime[5] ; D[4] ; CLK        ;
+; N/A   ; None         ; 22.291 ns  ; control:inst2|NStime[5] ; D[0] ; CLK        ;
+; N/A   ; None         ; 22.102 ns  ; control:inst2|state[2]  ; NSG  ; CLK        ;
+; N/A   ; None         ; 21.913 ns  ; control:inst2|light[4]  ; NSY  ; CLK        ;
+; N/A   ; None         ; 21.566 ns  ; control:inst2|light[3]  ; NSG  ; CLK        ;
+; N/A   ; None         ; 21.553 ns  ; control:inst2|state[2]  ; EWG  ; CLK        ;
+; N/A   ; None         ; 21.225 ns  ; control:inst2|light[2]  ; EWR  ; CLK        ;
+; N/A   ; None         ; 21.131 ns  ; control:inst2|light[0]  ; EWG  ; CLK        ;
+; N/A   ; None         ; 21.041 ns  ; control:inst2|light[1]  ; EWY  ; CLK        ;
+; N/A   ; None         ; 20.923 ns  ; control:inst2|light[5]  ; NSR  ; CLK        ;
+; N/A   ; None         ; 20.450 ns  ; cnt4:inst|tempQ[1]      ; D[3] ; CLK        ;
+; N/A   ; None         ; 20.441 ns  ; cnt4:inst|tempQ[1]      ; D[1] ; CLK        ;
+; N/A   ; None         ; 20.370 ns  ; cnt4:inst|tempQ[0]      ; D[3] ; CLK        ;
+; N/A   ; None         ; 20.361 ns  ; cnt4:inst|tempQ[0]      ; D[1] ; CLK        ;
+; N/A   ; None         ; 20.304 ns  ; cnt4:inst|tempQ[1]      ; D[2] ; CLK        ;
+; N/A   ; None         ; 20.224 ns  ; cnt4:inst|tempQ[0]      ; D[2] ; CLK        ;
+; N/A   ; None         ; 19.884 ns  ; cnt4:inst|tempQ[1]      ; D[5] ; CLK        ;
+; N/A   ; None         ; 19.849 ns  ; cnt4:inst|tempQ[1]      ; D[6] ; CLK        ;
+; N/A   ; None         ; 19.804 ns  ; cnt4:inst|tempQ[0]      ; D[5] ; CLK        ;
+; N/A   ; None         ; 19.788 ns  ; cnt4:inst|tempQ[1]      ; D[4] ; CLK        ;
+; N/A   ; None         ; 19.769 ns  ; cnt4:inst|tempQ[0]      ; D[6] ; CLK        ;
+; N/A   ; None         ; 19.708 ns  ; cnt4:inst|tempQ[0]      ; D[4] ; CLK        ;
+; N/A   ; None         ; 19.134 ns  ; cnt4:inst|tempQ[1]      ; D[0] ; CLK        ;
+; N/A   ; None         ; 19.054 ns  ; cnt4:inst|tempQ[0]      ; D[0] ; CLK        ;
+; N/A   ; None         ; 17.621 ns  ; div:inst4|tempQ         ; NSY  ; CLK        ;
+; N/A   ; None         ; 16.855 ns  ; div:inst4|tempQ         ; EWY  ; CLK        ;
+; N/A   ; None         ; 16.819 ns  ; div:inst4|tempQ         ; NSR  ; CLK        ;
+; N/A   ; None         ; 16.339 ns  ; div:inst4|tempQ         ; EWR  ; CLK        ;
+; N/A   ; None         ; 14.541 ns  ; cnt4:inst|tempQ[0]      ; W[2] ; CLK        ;
+; N/A   ; None         ; 14.221 ns  ; cnt4:inst|tempQ[1]      ; W[2] ; CLK        ;
+; N/A   ; None         ; 14.107 ns  ; cnt4:inst|tempQ[0]      ; W[3] ; CLK        ;
+; N/A   ; None         ; 14.048 ns  ; cnt4:inst|tempQ[0]      ; W[0] ; CLK        ;
+; N/A   ; None         ; 13.786 ns  ; cnt4:inst|tempQ[1]      ; W[3] ; CLK        ;
+; N/A   ; None         ; 13.722 ns  ; cnt4:inst|tempQ[1]      ; W[0] ; CLK        ;
+; N/A   ; None         ; 12.697 ns  ; cnt4:inst|tempQ[0]      ; W[1] ; CLK        ;
+; N/A   ; None         ; 12.371 ns  ; cnt4:inst|tempQ[1]      ; W[1] ; CLK        ;
++-------+--------------+------------+-------------------------+------+------------+
+
+
++----------------------------------------------------------------------------------------+
+; th                                                                                     ;
++---------------+-------------+-----------+-------+---------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                        ; To Clock ;
++---------------+-------------+-----------+-------+---------------------------+----------+
+; N/A           ; None        ; 7.487 ns  ; RST   ; control:inst2|cnt[0]      ; CLK      ;
+; N/A           ; None        ; 7.487 ns  ; RST   ; control:inst2|cnt[2]      ; CLK      ;
+; N/A           ; None        ; 7.487 ns  ; RST   ; control:inst2|cnt[1]      ; CLK      ;
+; N/A           ; None        ; 7.276 ns  ; flash ; control:inst2|cnt[0]      ; CLK      ;
+; N/A           ; None        ; 7.269 ns  ; flash ; control:inst2|cnt[2]      ; CLK      ;
+; N/A           ; None        ; 6.960 ns  ; flash ; control:inst2|cnt[1]      ; CLK      ;
+; N/A           ; None        ; 6.887 ns  ; flash ; control:inst2|cnt[5]      ; CLK      ;
+; N/A           ; None        ; 6.876 ns  ; flash ; control:inst2|cnt[4]      ; CLK      ;
+; N/A           ; None        ; 6.874 ns  ; flash ; control:inst2|cnt[3]      ; CLK      ;
+; N/A           ; None        ; 6.872 ns  ; flash ; control:inst2|cnt[6]      ; CLK      ;
+; N/A           ; None        ; 6.872 ns  ; flash ; control:inst2|key1        ; CLK      ;
+; N/A           ; None        ; 6.872 ns  ; RST   ; control:inst2|cntLight[0] ; CLK      ;
+; N/A           ; None        ; 6.811 ns  ; RST   ; control:inst2|cntLight[3] ; CLK      ;
+; N/A           ; None        ; 6.809 ns  ; RST   ; control:inst2|cnt[3]      ; CLK      ;
+; N/A           ; None        ; 6.809 ns  ; RST   ; control:inst2|cnt[4]      ; CLK      ;
+; N/A           ; None        ; 6.809 ns  ; RST   ; control:inst2|cnt[5]      ; CLK      ;
+; N/A           ; None        ; 6.809 ns  ; RST   ; control:inst2|cnt[6]      ; CLK      ;
+; N/A           ; None        ; 6.809 ns  ; RST   ; control:inst2|key1        ; CLK      ;
+; N/A           ; None        ; 5.462 ns  ; RST   ; control:inst2|cntLight[1] ; CLK      ;
+; N/A           ; None        ; 5.289 ns  ; flash ; control:inst2|mode[0]     ; CLK      ;
+; N/A           ; None        ; 5.289 ns  ; flash ; control:inst2|mode[2]     ; CLK      ;
+; N/A           ; None        ; 5.289 ns  ; flash ; control:inst2|mode[1]     ; CLK      ;
+; N/A           ; None        ; 4.255 ns  ; RST   ; control:inst2|cntLight[2] ; CLK      ;
+; N/A           ; None        ; 4.134 ns  ; flash ; control:inst2|state[0]    ; CLK      ;
+; N/A           ; None        ; 3.906 ns  ; flash ; control:inst2|state[2]    ; CLK      ;
+; N/A           ; None        ; 2.924 ns  ; flash ; control:inst2|state[1]    ; CLK      ;
++---------------+-------------+-----------+-------+---------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Thu Sep 28 21:26:13 2017
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off fpga -c fpga
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found 2 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "divDigital:inst18|tempQ" as buffer
+    Info: Detected ripple clock "div:inst4|tempQ" as buffer
+Info: Slack time is 5.758 ns for clock "CLK" between source register "control:inst2|state[2]" and destination register "control:inst2|EWtime[7]"
+    Info: Fmax is 70.21 MHz (period= 14.242 ns)
+    Info: + Largest register to register requirement is 19.291 ns
+        Info: + Setup relationship between source and destination is 20.000 ns
+            Info: + Latch edge is 20.000 ns
+                Info: Clock period of Destination clock "CLK" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Destination register is 1
+            Info: - Launch edge is 0.000 ns
+                Info: Clock period of Source clock "CLK" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Source register is 1
+        Info: + Largest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "CLK" to destination register is 13.417 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 17; CLK Node = 'CLK'
+                Info: 2: + IC(1.600 ns) + CELL(1.294 ns) = 4.057 ns; Loc. = LC_X10_Y3_N9; Fanout = 13; REG Node = 'divDigital:inst18|tempQ'
+                Info: 3: + IC(2.867 ns) + CELL(1.294 ns) = 8.218 ns; Loc. = LC_X8_Y4_N6; Fanout = 45; REG Node = 'div:inst4|tempQ'
+                Info: 4: + IC(4.281 ns) + CELL(0.918 ns) = 13.417 ns; Loc. = LC_X11_Y6_N0; Fanout = 4; REG Node = 'control:inst2|EWtime[7]'
+                Info: Total cell delay = 4.669 ns ( 34.80 % )
+                Info: Total interconnect delay = 8.748 ns ( 65.20 % )
+            Info: - Longest clock path from clock "CLK" to source register is 13.417 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 17; CLK Node = 'CLK'
+                Info: 2: + IC(1.600 ns) + CELL(1.294 ns) = 4.057 ns; Loc. = LC_X10_Y3_N9; Fanout = 13; REG Node = 'divDigital:inst18|tempQ'
+                Info: 3: + IC(2.867 ns) + CELL(1.294 ns) = 8.218 ns; Loc. = LC_X8_Y4_N6; Fanout = 45; REG Node = 'div:inst4|tempQ'
+                Info: 4: + IC(4.281 ns) + CELL(0.918 ns) = 13.417 ns; Loc. = LC_X10_Y6_N8; Fanout = 43; REG Node = 'control:inst2|state[2]'
+                Info: Total cell delay = 4.669 ns ( 34.80 % )
+                Info: Total interconnect delay = 8.748 ns ( 65.20 % )
+        Info: - Micro clock to output delay of source is 0.376 ns
+        Info: - Micro setup delay of destination is 0.333 ns
+    Info: - Longest register to register delay is 13.533 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X10_Y6_N8; Fanout = 43; REG Node = 'control:inst2|state[2]'
+        Info: 2: + IC(2.984 ns) + CELL(0.200 ns) = 3.184 ns; Loc. = LC_X6_Y4_N7; Fanout = 8; COMB Node = 'control:inst2|Equal1~6'
+        Info: 3: + IC(3.169 ns) + CELL(0.914 ns) = 7.267 ns; Loc. = LC_X10_Y6_N3; Fanout = 6; COMB Node = 'control:inst2|EWtime[7]~80'
+        Info: 4: + IC(0.713 ns) + CELL(0.914 ns) = 8.894 ns; Loc. = LC_X10_Y6_N6; Fanout = 3; COMB Node = 'control:inst2|EWtime~81'
+        Info: 5: + IC(2.405 ns) + CELL(0.511 ns) = 11.810 ns; Loc. = LC_X12_Y6_N1; Fanout = 1; COMB Node = 'control:inst2|EWtime~93'
+        Info: 6: + IC(1.132 ns) + CELL(0.591 ns) = 13.533 ns; Loc. = LC_X11_Y6_N0; Fanout = 4; REG Node = 'control:inst2|EWtime[7]'
+        Info: Total cell delay = 3.130 ns ( 23.13 % )
+        Info: Total interconnect delay = 10.403 ns ( 76.87 % )
+Info: Minimum slack time is 1.41 ns for clock "CLK" between source register "control:inst2|mode[0]" and destination register "control:inst2|mode[1]"
+    Info: + Shortest register to register delay is 1.255 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X6_Y6_N7; Fanout = 4; REG Node = 'control:inst2|mode[0]'
+        Info: 2: + IC(0.975 ns) + CELL(0.280 ns) = 1.255 ns; Loc. = LC_X6_Y6_N3; Fanout = 4; REG Node = 'control:inst2|mode[1]'
+        Info: Total cell delay = 0.280 ns ( 22.31 % )
+        Info: Total interconnect delay = 0.975 ns ( 77.69 % )
+    Info: - Smallest register to register requirement is -0.155 ns
+        Info: + Hold relationship between source and destination is 0.000 ns
+            Info: + Latch edge is 0.000 ns
+                Info: Clock period of Destination clock "CLK" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Destination register is 1
+                Info: Multicycle Hold factor for Destination register is 1
+            Info: - Launch edge is 0.000 ns
+                Info: Clock period of Source clock "CLK" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Source register is 1
+                Info: Multicycle Hold factor for Source register is 1
+        Info: + Smallest clock skew is 0.000 ns
+            Info: + Longest clock path from clock "CLK" to destination register is 13.417 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 17; CLK Node = 'CLK'
+                Info: 2: + IC(1.600 ns) + CELL(1.294 ns) = 4.057 ns; Loc. = LC_X10_Y3_N9; Fanout = 13; REG Node = 'divDigital:inst18|tempQ'
+                Info: 3: + IC(2.867 ns) + CELL(1.294 ns) = 8.218 ns; Loc. = LC_X8_Y4_N6; Fanout = 45; REG Node = 'div:inst4|tempQ'
+                Info: 4: + IC(4.281 ns) + CELL(0.918 ns) = 13.417 ns; Loc. = LC_X6_Y6_N3; Fanout = 4; REG Node = 'control:inst2|mode[1]'
+                Info: Total cell delay = 4.669 ns ( 34.80 % )
+                Info: Total interconnect delay = 8.748 ns ( 65.20 % )
+            Info: - Shortest clock path from clock "CLK" to source register is 13.417 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 17; CLK Node = 'CLK'
+                Info: 2: + IC(1.600 ns) + CELL(1.294 ns) = 4.057 ns; Loc. = LC_X10_Y3_N9; Fanout = 13; REG Node = 'divDigital:inst18|tempQ'
+                Info: 3: + IC(2.867 ns) + CELL(1.294 ns) = 8.218 ns; Loc. = LC_X8_Y4_N6; Fanout = 45; REG Node = 'div:inst4|tempQ'
+                Info: 4: + IC(4.281 ns) + CELL(0.918 ns) = 13.417 ns; Loc. = LC_X6_Y6_N7; Fanout = 4; REG Node = 'control:inst2|mode[0]'
+                Info: Total cell delay = 4.669 ns ( 34.80 % )
+                Info: Total interconnect delay = 8.748 ns ( 65.20 % )
+        Info: - Micro clock to output delay of source is 0.376 ns
+        Info: + Micro hold delay of destination is 0.221 ns
+Info: tsu for register "control:inst2|state[0]" (data pin = "flash", clock pin = "CLK") is -2.251 ns
+    Info: + Longest pin to register delay is 10.833 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_27; Fanout = 10; PIN Node = 'flash'
+        Info: 2: + IC(4.409 ns) + CELL(0.740 ns) = 6.281 ns; Loc. = LC_X5_Y6_N4; Fanout = 4; COMB Node = 'control:inst2|state~37'
+        Info: 3: + IC(0.812 ns) + CELL(0.511 ns) = 7.604 ns; Loc. = LC_X5_Y6_N2; Fanout = 1; COMB Node = 'control:inst2|state~47'
+        Info: 4: + IC(0.733 ns) + CELL(0.200 ns) = 8.537 ns; Loc. = LC_X5_Y6_N8; Fanout = 2; COMB Node = 'control:inst2|state~48'
+        Info: 5: + IC(0.305 ns) + CELL(0.200 ns) = 9.042 ns; Loc. = LC_X5_Y6_N9; Fanout = 1; COMB Node = 'control:inst2|state~49'
+        Info: 6: + IC(0.730 ns) + CELL(1.061 ns) = 10.833 ns; Loc. = LC_X5_Y6_N0; Fanout = 24; REG Node = 'control:inst2|state[0]'
+        Info: Total cell delay = 3.844 ns ( 35.48 % )
+        Info: Total interconnect delay = 6.989 ns ( 64.52 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "CLK" to destination register is 13.417 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 17; CLK Node = 'CLK'
+        Info: 2: + IC(1.600 ns) + CELL(1.294 ns) = 4.057 ns; Loc. = LC_X10_Y3_N9; Fanout = 13; REG Node = 'divDigital:inst18|tempQ'
+        Info: 3: + IC(2.867 ns) + CELL(1.294 ns) = 8.218 ns; Loc. = LC_X8_Y4_N6; Fanout = 45; REG Node = 'div:inst4|tempQ'
+        Info: 4: + IC(4.281 ns) + CELL(0.918 ns) = 13.417 ns; Loc. = LC_X5_Y6_N0; Fanout = 24; REG Node = 'control:inst2|state[0]'
+        Info: Total cell delay = 4.669 ns ( 34.80 % )
+        Info: Total interconnect delay = 8.748 ns ( 65.20 % )
+Info: tco from clock "CLK" to destination pin "D[1]" through register "control:inst2|EWtime[4]" is 27.697 ns
+    Info: + Longest clock path from clock "CLK" to source register is 13.417 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 17; CLK Node = 'CLK'
+        Info: 2: + IC(1.600 ns) + CELL(1.294 ns) = 4.057 ns; Loc. = LC_X10_Y3_N9; Fanout = 13; REG Node = 'divDigital:inst18|tempQ'
+        Info: 3: + IC(2.867 ns) + CELL(1.294 ns) = 8.218 ns; Loc. = LC_X8_Y4_N6; Fanout = 45; REG Node = 'div:inst4|tempQ'
+        Info: 4: + IC(4.281 ns) + CELL(0.918 ns) = 13.417 ns; Loc. = LC_X12_Y6_N4; Fanout = 8; REG Node = 'control:inst2|EWtime[4]'
+        Info: Total cell delay = 4.669 ns ( 34.80 % )
+        Info: Total interconnect delay = 8.748 ns ( 65.20 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 13.904 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X12_Y6_N4; Fanout = 8; REG Node = 'control:inst2|EWtime[4]'
+        Info: 2: + IC(4.730 ns) + CELL(0.200 ns) = 4.930 ns; Loc. = LC_X10_Y5_N7; Fanout = 1; COMB Node = 'mux41a:inst6|Y[0]~16'
+        Info: 3: + IC(0.766 ns) + CELL(0.511 ns) = 6.207 ns; Loc. = LC_X10_Y5_N8; Fanout = 7; COMB Node = 'mux41a:inst6|Y[0]'
+        Info: 4: + IC(2.711 ns) + CELL(0.740 ns) = 9.658 ns; Loc. = LC_X12_Y2_N2; Fanout = 1; COMB Node = 'digital47:inst21|Mux5~0'
+        Info: 5: + IC(1.924 ns) + CELL(2.322 ns) = 13.904 ns; Loc. = PIN_53; Fanout = 0; PIN Node = 'D[1]'
+        Info: Total cell delay = 3.773 ns ( 27.14 % )
+        Info: Total interconnect delay = 10.131 ns ( 72.86 % )
+Info: th for register "control:inst2|cnt[0]" (data pin = "RST", clock pin = "CLK") is 7.487 ns
+    Info: + Longest clock path from clock "CLK" to destination register is 13.417 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 17; CLK Node = 'CLK'
+        Info: 2: + IC(1.600 ns) + CELL(1.294 ns) = 4.057 ns; Loc. = LC_X10_Y3_N9; Fanout = 13; REG Node = 'divDigital:inst18|tempQ'
+        Info: 3: + IC(2.867 ns) + CELL(1.294 ns) = 8.218 ns; Loc. = LC_X8_Y4_N6; Fanout = 45; REG Node = 'div:inst4|tempQ'
+        Info: 4: + IC(4.281 ns) + CELL(0.918 ns) = 13.417 ns; Loc. = LC_X5_Y5_N0; Fanout = 3; REG Node = 'control:inst2|cnt[0]'
+        Info: Total cell delay = 4.669 ns ( 34.80 % )
+        Info: Total interconnect delay = 8.748 ns ( 65.20 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 6.151 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_29; Fanout = 25; PIN Node = 'RST'
+        Info: 2: + IC(3.776 ns) + CELL(1.243 ns) = 6.151 ns; Loc. = LC_X5_Y5_N0; Fanout = 3; REG Node = 'control:inst2|cnt[0]'
+        Info: Total cell delay = 2.375 ns ( 38.61 % )
+        Info: Total interconnect delay = 3.776 ns ( 61.39 % )
+Info: All timing requirements were met for slow timing model timing analysis. See Report window for more details.
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 187 megabytes
+    Info: Processing ended: Thu Sep 28 21:26:14 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

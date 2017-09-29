@@ -1,0 +1,11 @@
+|state
+CLK => num[3].CLK
+CLK => num[2].CLK
+CLK => num[1].CLK
+CLK => num[0].CLK
+CLK => tempT[1].CLK
+CLK => tempT[0].CLK
+stateQ[0] <= tempT[0].DB_MAX_OUTPUT_PORT_TYPE
+stateQ[1] <= tempT[1].DB_MAX_OUTPUT_PORT_TYPE
+
+

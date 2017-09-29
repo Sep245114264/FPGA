@@ -1,0 +1,66 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\hp\Desktop\数电课程设计\27进制2.0.PcbDoc
+Date     : 2017/9/20
+Time     : 13:11:42
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+   Violation between Via (136.652mm,40.64mm) Top Layer to Bottom Layer and 
+                     Pad U3-3(138.049mm,39.624mm)  Multi-Layer
+Rule Violations :1
+
+Processing Rule : Silkscreen Over Component Pads (Clearance=0.254mm) (All),(All)
+   Violation between Track (40.03mm,31.877mm)(40.259mm,31.877mm)  Top Overlay and 
+                     Pad R2-1(38.989mm,31.877mm)  Multi-Layer
+   Violation between Track (45.339mm,31.877mm)(45.568mm,31.877mm)  Top Overlay and 
+                     Pad R2-2(46.609mm,31.877mm)  Multi-Layer
+   Violation between Track (165.481mm,45.758mm)(165.481mm,54.318mm)  Top Overlay and 
+                     Pad S1-2(166.751mm,47.498mm)  Multi-Layer
+   Violation between Track (168.021mm,45.758mm)(168.021mm,54.318mm)  Top Overlay and 
+                     Pad S1-2(166.751mm,47.498mm)  Multi-Layer
+   Violation between Track (165.481mm,45.758mm)(165.481mm,54.318mm)  Top Overlay and 
+                     Pad S1-1(166.751mm,52.578mm)  Multi-Layer
+   Violation between Track (168.021mm,45.758mm)(168.021mm,54.318mm)  Top Overlay and 
+                     Pad S1-1(166.751mm,52.578mm)  Multi-Layer
+   Violation between Track (165.735mm,76.606mm)(165.735mm,76.835mm)  Top Overlay and 
+                     Pad R3-1(165.735mm,75.565mm)  Multi-Layer
+   Violation between Track (165.735mm,81.915mm)(165.735mm,82.144mm)  Top Overlay and 
+                     Pad R3-2(165.735mm,83.185mm)  Multi-Layer
+Rule Violations :8
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+   Violation between Text "DS1" (126.238mm,86.868mm)  Top Overlay and 
+                     Track (124.279mm,81.902mm)(124.279mm,89.802mm)  Top Overlay
+Rule Violations :1
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+   Violation between Net Antennae: Track (65.913mm,55.753mm)(65.913mm,59.944mm)  Bottom Layer
+   Violation between Net Antennae: Track (113.8mm,31.877mm)(114.681mm,31.877mm)  Bottom Layer
+Rule Violations :2
+
+
+Violations Detected : 12
+Time Elapsed        : 00:00:00

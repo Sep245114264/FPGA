@@ -1,0 +1,238 @@
+|fpga
+NSR <= control:inst2.NSR
+CLK => div:inst.CLK
+CLK => divDigital:inst12.CLK
+pin_name => control:inst2.RST
+pin_name8 => control:inst2.Rflash
+pin_name9 => control:inst2.Yflash
+NSY <= control:inst2.NSY
+NSG <= control:inst2.NSG
+EWR <= control:inst2.EWR
+EWY <= control:inst2.EWY
+EWG <= control:inst2.EWG
+D[0] <= digital47:inst4.DOUT[0]
+D[1] <= digital47:inst4.DOUT[1]
+D[2] <= digital47:inst4.DOUT[2]
+D[3] <= digital47:inst4.DOUT[3]
+D[4] <= digital47:inst4.DOUT[4]
+D[5] <= digital47:inst4.DOUT[5]
+D[6] <= digital47:inst4.DOUT[6]
+W[0] <= dec24:inst3.Y[0]
+W[1] <= dec24:inst3.Y[1]
+W[2] <= dec24:inst3.Y[2]
+W[3] <= dec24:inst3.Y[3]
+
+
+|fpga|control:inst2
+CLK => light[5].CLK
+CLK => light[4].CLK
+CLK => light[3].CLK
+CLK => light[2].CLK
+CLK => light[1].CLK
+CLK => light[0].CLK
+CLK => state[2].CLK
+CLK => state[1].CLK
+CLK => state[0].CLK
+CLK => NStime[6].CLK
+CLK => NStime[5].CLK
+CLK => NStime[4].CLK
+CLK => NStime[3].CLK
+CLK => NStime[2].CLK
+CLK => NStime[1].CLK
+CLK => NStime[0].CLK
+CLK => EWtime[6].CLK
+CLK => EWtime[5].CLK
+CLK => EWtime[4].CLK
+CLK => EWtime[3].CLK
+CLK => EWtime[2].CLK
+CLK => EWtime[1].CLK
+CLK => EWtime[0].CLK
+CLK => EWY~1.DATAB
+CLK => NSY~1.DATAB
+CLK => EWR~0.DATAB
+CLK => NSR~0.DATAB
+CLK => EWY~0.DATAB
+CLK => NSY~0.DATAB
+RST => light[3]~1.IN1
+RST => state[2].ACLR
+RST => state[0]~1.IN1
+RST => NStime[6].ACLR
+RST => NStime[4].ACLR
+RST => NStime[2].PRESET
+RST => NStime[1].PRESET
+RST => EWtime[6].ACLR
+RST => EWtime[3].ACLR
+RST => EWtime[0].PRESET
+RST => state[0]~2.IN0
+RST => state[2]~3.IN1
+Rflash => light[3]~0.IN0
+Rflash => state[0]~1.IN0
+Rflash => state[0]~0.IN0
+Yflash => light[3]~0.IN1
+Yflash => state[0]~0.IN1
+NSR <= NSR~0.DB_MAX_OUTPUT_PORT_TYPE
+NSY <= NSY~2.DB_MAX_OUTPUT_PORT_TYPE
+NSG <= light[3].DB_MAX_OUTPUT_PORT_TYPE
+EWR <= EWR~0.DB_MAX_OUTPUT_PORT_TYPE
+EWY <= EWY~2.DB_MAX_OUTPUT_PORT_TYPE
+EWG <= light[0].DB_MAX_OUTPUT_PORT_TYPE
+NSunit[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+NSunit[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+NSunit[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+NSunit[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+EWunit[0] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+EWunit[1] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+EWunit[2] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+EWunit[3] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+NSdecade[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+NSdecade[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+NSdecade[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+NSdecade[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+EWdecade[0] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+EWdecade[1] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+EWdecade[2] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+EWdecade[3] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fpga|div:inst
+CLK => num[25].CLK
+CLK => num[24].CLK
+CLK => num[23].CLK
+CLK => num[22].CLK
+CLK => num[21].CLK
+CLK => num[20].CLK
+CLK => num[19].CLK
+CLK => num[18].CLK
+CLK => num[17].CLK
+CLK => num[16].CLK
+CLK => num[15].CLK
+CLK => num[14].CLK
+CLK => num[13].CLK
+CLK => num[12].CLK
+CLK => num[11].CLK
+CLK => num[10].CLK
+CLK => num[9].CLK
+CLK => num[8].CLK
+CLK => num[7].CLK
+CLK => num[6].CLK
+CLK => num[5].CLK
+CLK => num[4].CLK
+CLK => num[3].CLK
+CLK => num[2].CLK
+CLK => num[1].CLK
+CLK => num[0].CLK
+Q <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fpga|digital47:inst4
+NUM[0] => Mux6.IN19
+NUM[0] => Mux5.IN19
+NUM[0] => Mux4.IN19
+NUM[0] => Mux3.IN19
+NUM[0] => Mux2.IN19
+NUM[0] => Mux1.IN19
+NUM[0] => Mux0.IN19
+NUM[1] => Mux6.IN18
+NUM[1] => Mux5.IN18
+NUM[1] => Mux4.IN18
+NUM[1] => Mux3.IN18
+NUM[1] => Mux2.IN18
+NUM[1] => Mux1.IN18
+NUM[1] => Mux0.IN18
+NUM[2] => Mux6.IN17
+NUM[2] => Mux5.IN17
+NUM[2] => Mux4.IN17
+NUM[2] => Mux3.IN17
+NUM[2] => Mux2.IN17
+NUM[2] => Mux1.IN17
+NUM[2] => Mux0.IN17
+NUM[3] => Mux6.IN16
+NUM[3] => Mux5.IN16
+NUM[3] => Mux4.IN16
+NUM[3] => Mux3.IN16
+NUM[3] => Mux2.IN16
+NUM[3] => Mux1.IN16
+NUM[3] => Mux0.IN16
+DOUT[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fpga|mux41a:inst6
+D3[0] => Y~3.DATAB
+D3[1] => Y~2.DATAB
+D3[2] => Y~1.DATAB
+D3[3] => Y~0.DATAB
+D2[0] => Y~7.DATAB
+D2[1] => Y~6.DATAB
+D2[2] => Y~5.DATAB
+D2[3] => Y~4.DATAB
+D1[0] => Y~11.DATAB
+D1[1] => Y~10.DATAB
+D1[2] => Y~9.DATAB
+D1[3] => Y~8.DATAB
+D0[0] => Y~15.DATAB
+D0[1] => Y~14.DATAB
+D0[2] => Y~13.DATAB
+D0[3] => Y~12.DATAB
+A[0] => Equal3.IN3
+A[0] => Equal2.IN3
+A[0] => Equal1.IN3
+A[0] => Equal0.IN3
+A[1] => Equal3.IN2
+A[1] => Equal2.IN2
+A[1] => Equal1.IN2
+A[1] => Equal0.IN2
+Y[0] <= Y~15.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Y~14.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Y~13.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Y~12.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fpga|cnt4:inst1
+CLK => tempQ[1].CLK
+CLK => tempQ[0].CLK
+Q[0] <= tempQ[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tempQ[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fpga|divDigital:inst12
+CLK => num[16].CLK
+CLK => num[15].CLK
+CLK => num[14].CLK
+CLK => num[13].CLK
+CLK => num[12].CLK
+CLK => num[11].CLK
+CLK => num[10].CLK
+CLK => num[9].CLK
+CLK => num[8].CLK
+CLK => num[7].CLK
+CLK => num[6].CLK
+CLK => num[5].CLK
+CLK => num[4].CLK
+CLK => num[3].CLK
+CLK => num[2].CLK
+CLK => num[1].CLK
+CLK => num[0].CLK
+Q <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fpga|dec24:inst3
+A[0] => Mux3.IN5
+A[0] => Mux2.IN5
+A[0] => Mux1.IN5
+A[0] => Mux0.IN5
+A[1] => Mux3.IN4
+A[1] => Mux2.IN4
+A[1] => Mux1.IN4
+A[1] => Mux0.IN4
+Y[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

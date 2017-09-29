@@ -1,0 +1,33 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity countdown is
+	generic( t : integer := 1);
+	port( CLK : in std_logic;
+		--stateQ : in std_logic_vector(1 downto 0);
+		nsNumIn, ewNumIn : in std_logic_vector(6 downto 0);
+		nsNum, ewNum : out std_logic_vector(6 downto 0) );
+end entity;
+
+architecture beh of countdown is
+signal tempNSin, tempEWin : std_logic_vector(6 downto 0);
+begin
+	tempNSin <= nsNumIn;
+	tempEWin <= ewNumIn;
+	process(CLK)
+	variable tempNS, tempEW : std_logic_vector(6 downto 0);
+	begin
+		tempNS := tempNSin;
+		tempEW := tempEWin;
+		if( rising_edge(CLK) ) then
+			tempNS := tempNS -1;
+			tempEW := tempEW - 1;
+		end if;
+		nsNum <= tempNS;
+		ewNum <= tempEW;
+	end process;
+		
+end architecture;
+			

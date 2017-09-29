@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sat Sep 23 16:49:06 2017
+Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
+Revision Name : cnt4
+Top-level Entity Name : cnt4
+Family : MAX II
+Device : EPM570T100C5
+Timing Models : Final
+Total logic elements : 2 / 570 ( < 1 % )
+Total pins : 3 / 76 ( 4 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

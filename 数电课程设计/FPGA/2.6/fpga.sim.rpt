@@ -1,0 +1,382 @@
+Simulator report for fpga
+Fri Sep 29 08:37:54 2017
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 100.0 us     ;
+; Simulation Netlist Size     ; 189 nodes    ;
+; Simulation Coverage         ;      83.96 % ;
+; Total Number of Transitions ; 1720         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; MAX II       ;
+; Device                      ; EPM570T100C5 ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                       ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+; Option                                                                                     ; Setting     ; Default Value ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+; Simulation mode                                                                            ; Timing      ; Timing        ;
+; Start time                                                                                 ; 0 ns        ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF        ;               ;
+; Vector input source                                                                        ; control.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On          ; On            ;
+; Check outputs                                                                              ; Off         ; Off           ;
+; Report simulation coverage                                                                 ; On          ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On          ; On            ;
+; Display missing 1-value coverage report                                                    ; On          ; On            ;
+; Display missing 0-value coverage report                                                    ; On          ; On            ;
+; Detect setup and hold time violations                                                      ; Off         ; Off           ;
+; Detect glitches                                                                            ; Off         ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off         ; Off           ;
+; Generate Signal Activity File                                                              ; Off         ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off         ; Off           ;
+; Group bus channels in simulation results                                                   ; Off         ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On          ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE  ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off         ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto        ; Auto          ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      83.96 % ;
+; Total nodes checked                                 ; 189          ;
+; Total output ports checked                          ; 187          ;
+; Total output ports with complete 1/0-value coverage ; 157          ;
+; Total output ports with no 1/0-value coverage       ; 29           ;
+; Total output ports with no 1-value coverage         ; 29           ;
+; Total output ports with no 0-value coverage         ; 30           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                              ;
++---------------------------+---------------------------+------------------+
+; Node Name                 ; Output Port Name          ; Output Port Type ;
++---------------------------+---------------------------+------------------+
+; |control|state[2]         ; |control|state[2]         ; regout           ;
+; |control|state[1]         ; |control|state[1]         ; regout           ;
+; |control|NSG~2            ; |control|NSG~2            ; combout          ;
+; |control|state[0]         ; |control|state[0]         ; regout           ;
+; |control|NSR~2            ; |control|NSR~2            ; combout          ;
+; |control|light[4]         ; |control|light[4]         ; regout           ;
+; |control|EWY~4            ; |control|EWY~4            ; combout          ;
+; |control|NSY~4            ; |control|NSY~4            ; combout          ;
+; |control|NSG~3            ; |control|NSG~3            ; combout          ;
+; |control|light[2]         ; |control|light[2]         ; regout           ;
+; |control|EWR~2            ; |control|EWR~2            ; combout          ;
+; |control|light[1]         ; |control|light[1]         ; regout           ;
+; |control|EWY~5            ; |control|EWY~5            ; combout          ;
+; |control|EWG~2            ; |control|EWG~2            ; combout          ;
+; |control|NStimeUnit[0]    ; |control|NStimeUnit[0]    ; regout           ;
+; |control|NStimeUnit[1]    ; |control|NStimeUnit[1]    ; regout           ;
+; |control|NStimeUnit[3]    ; |control|NStimeUnit[3]    ; regout           ;
+; |control|EWtimeUnit[2]    ; |control|EWtimeUnit[2]    ; regout           ;
+; |control|EWtimeDecade[0]  ; |control|EWtimeDecade[0]  ; regout           ;
+; |control|Equal8~0         ; |control|Equal8~0         ; combout          ;
+; |control|light~30         ; |control|light~30         ; combout          ;
+; |control|Equal3~0         ; |control|Equal3~0         ; combout          ;
+; |control|Equal5~0         ; |control|Equal5~0         ; combout          ;
+; |control|light~31         ; |control|light~31         ; combout          ;
+; |control|light~32         ; |control|light~32         ; combout          ;
+; |control|light~33         ; |control|light~33         ; combout          ;
+; |control|cntLight[0]      ; |control|cntLight[0]      ; regout           ;
+; |control|light~34         ; |control|light~34         ; combout          ;
+; |control|mode[0]          ; |control|mode[0]          ; regout           ;
+; |control|mode[2]          ; |control|mode[2]          ; regout           ;
+; |control|Add0~18          ; |control|Add0~18          ; combout          ;
+; |control|Add0~18          ; |control|Add0~19          ; cout0            ;
+; |control|Add0~18          ; |control|Add0~19COUT1_39  ; cout1            ;
+; |control|Add0~24          ; |control|Add0~24          ; combout          ;
+; |control|Equal0~0         ; |control|Equal0~0         ; combout          ;
+; |control|Equal0~1         ; |control|Equal0~1         ; combout          ;
+; |control|state~40         ; |control|state~40         ; combout          ;
+; |control|state[2]~41      ; |control|state[2]~41      ; combout          ;
+; |control|EWtimeUnit~34    ; |control|EWtimeUnit~34    ; combout          ;
+; |control|Equal1~1         ; |control|Equal1~1         ; combout          ;
+; |control|Equal6~0         ; |control|Equal6~0         ; combout          ;
+; |control|state~42         ; |control|state~42         ; combout          ;
+; |control|Equal1~2         ; |control|Equal1~2         ; combout          ;
+; |control|state~44         ; |control|state~44         ; combout          ;
+; |control|Equal1~3         ; |control|Equal1~3         ; combout          ;
+; |control|state~45         ; |control|state~45         ; combout          ;
+; |control|mode[1]          ; |control|state~46         ; combout          ;
+; |control|mode[1]          ; |control|mode[1]          ; regout           ;
+; |control|state~47         ; |control|state~47         ; combout          ;
+; |control|state~48         ; |control|state~48         ; combout          ;
+; |control|EWtimeUnit~35    ; |control|EWtimeUnit~35    ; combout          ;
+; |control|state~50         ; |control|state~50         ; combout          ;
+; |control|Equal1~4         ; |control|Equal1~4         ; combout          ;
+; |control|state~51         ; |control|state~51         ; combout          ;
+; |control|state~52         ; |control|state~52         ; combout          ;
+; |control|state~54         ; |control|state~54         ; combout          ;
+; |control|Equal9~0         ; |control|Equal9~0         ; combout          ;
+; |control|Equal1~5         ; |control|Equal1~5         ; combout          ;
+; |control|light~36         ; |control|light~36         ; combout          ;
+; |control|light~38         ; |control|light~38         ; combout          ;
+; |control|light~39         ; |control|light~39         ; combout          ;
+; |control|Mux2~0           ; |control|Mux2~0           ; combout          ;
+; |control|light~40         ; |control|light~40         ; combout          ;
+; |control|light~42         ; |control|light~42         ; combout          ;
+; |control|light~43         ; |control|light~43         ; combout          ;
+; |control|light~44         ; |control|light~44         ; combout          ;
+; |control|light~46         ; |control|light~46         ; combout          ;
+; |control|light~47         ; |control|light~47         ; combout          ;
+; |control|light~48         ; |control|light~48         ; combout          ;
+; |control|light~50         ; |control|light~50         ; combout          ;
+; |control|light~51         ; |control|light~51         ; combout          ;
+; |control|light~52         ; |control|light~52         ; combout          ;
+; |control|light~53         ; |control|light~53         ; combout          ;
+; |control|NStimeUnit[3]~41 ; |control|NStimeUnit[3]~41 ; combout          ;
+; |control|NStimeUnit~42    ; |control|NStimeUnit~42    ; combout          ;
+; |control|process_0~1      ; |control|process_0~1      ; combout          ;
+; |control|NStimeUnit~43    ; |control|NStimeUnit~43    ; combout          ;
+; |control|NStimeUnit[2]~2  ; |control|NStimeUnit[2]~2  ; combout          ;
+; |control|NStimeUnit[3]~45 ; |control|NStimeUnit[3]~45 ; combout          ;
+; |control|NStimeUnit[3]~46 ; |control|NStimeUnit[3]~46 ; combout          ;
+; |control|NStimeUnit[3]~47 ; |control|NStimeUnit[3]~47 ; combout          ;
+; |control|Add3~0           ; |control|Add3~0           ; combout          ;
+; |control|NStimeUnit~48    ; |control|NStimeUnit~48    ; combout          ;
+; |control|NStimeUnit[3]~49 ; |control|NStimeUnit[3]~49 ; combout          ;
+; |control|NStimeUnit~50    ; |control|NStimeUnit~50    ; combout          ;
+; |control|NStimeUnit[3]~4  ; |control|NStimeUnit[3]~4  ; combout          ;
+; |control|NStimeUnit~52    ; |control|NStimeUnit~52    ; combout          ;
+; |control|NStimeUnit~53    ; |control|NStimeUnit~53    ; combout          ;
+; |control|Add3~1           ; |control|Add3~1           ; combout          ;
+; |control|Add3~2           ; |control|Add3~2           ; combout          ;
+; |control|NStimeUnit~55    ; |control|NStimeUnit~55    ; combout          ;
+; |control|EWtimeUnit~36    ; |control|EWtimeUnit~36    ; combout          ;
+; |control|EWtimeUnit~37    ; |control|EWtimeUnit~37    ; combout          ;
+; |control|EWtimeUnit~38    ; |control|EWtimeUnit~38    ; combout          ;
+; |control|EWtimeUnit~41    ; |control|EWtimeUnit~41    ; combout          ;
+; |control|EWtimeUnit~42    ; |control|EWtimeUnit~42    ; combout          ;
+; |control|EWtimeUnit~43    ; |control|EWtimeUnit~43    ; combout          ;
+; |control|EWtimeUnit~44    ; |control|EWtimeUnit~44    ; combout          ;
+; |control|EWtimeUnit~45    ; |control|EWtimeUnit~45    ; combout          ;
+; |control|Equal8~1         ; |control|Equal8~1         ; combout          ;
+; |control|EWtimeUnit~46    ; |control|EWtimeUnit~46    ; combout          ;
+; |control|EWtimeUnit~47    ; |control|EWtimeUnit~47    ; combout          ;
+; |control|EWtimeUnit~49    ; |control|EWtimeUnit~49    ; combout          ;
+; |control|EWtimeUnit~50    ; |control|EWtimeUnit~50    ; combout          ;
+; |control|EWtimeUnit~51    ; |control|EWtimeUnit~51    ; combout          ;
+; |control|EWtimeUnit[3]    ; |control|EWtimeUnit[3]    ; regout           ;
+; |control|NStimeDecade~48  ; |control|NStimeDecade~48  ; combout          ;
+; |control|NStimeDecade~49  ; |control|NStimeDecade~49  ; combout          ;
+; |control|NStimeDecade[0]  ; |control|NStimeDecade[0]  ; regout           ;
+; |control|NStimeDecade~51  ; |control|NStimeDecade~51  ; combout          ;
+; |control|state~56         ; |control|state~56         ; combout          ;
+; |control|NStimeDecade~52  ; |control|NStimeDecade~52  ; combout          ;
+; |control|NStimeDecade~53  ; |control|NStimeDecade~53  ; combout          ;
+; |control|NStimeDecade~56  ; |control|NStimeDecade~56  ; combout          ;
+; |control|NStimeDecade[3]  ; |control|NStimeDecade[3]  ; regout           ;
+; |control|EWtimeDecade~44  ; |control|EWtimeDecade~44  ; combout          ;
+; |control|EWtimeDecade~45  ; |control|EWtimeDecade~45  ; combout          ;
+; |control|EWtimeDecade~46  ; |control|EWtimeDecade~46  ; combout          ;
+; |control|EWtimeDecade~47  ; |control|EWtimeDecade~47  ; combout          ;
+; |control|EWtimeDecade~48  ; |control|EWtimeDecade~48  ; combout          ;
+; |control|EWtimeDecade~49  ; |control|EWtimeDecade~49  ; combout          ;
+; |control|EWtimeDecade~50  ; |control|EWtimeDecade~50  ; combout          ;
+; |control|EWtimeDecade~51  ; |control|EWtimeDecade~51  ; combout          ;
+; |control|EWtimeDecade~53  ; |control|EWtimeDecade~53  ; combout          ;
+; |control|EWtimeDecade~56  ; |control|EWtimeDecade~56  ; combout          ;
+; |control|EWtimeDecade[3]  ; |control|EWtimeDecade[3]  ; regout           ;
+; |control|Equal1~6         ; |control|Equal1~6         ; combout          ;
+; |control|cntLight[0]~25   ; |control|cntLight[0]~25   ; combout          ;
+; |control|cntLight~27      ; |control|cntLight~27      ; combout          ;
+; |control|mode[0]~3        ; |control|mode[0]~3        ; combout          ;
+; |control|cnt[0]           ; |control|cnt[0]           ; regout           ;
+; |control|state~57         ; |control|state~57         ; combout          ;
+; |control|NStimeDecade~58  ; |control|NStimeDecade~58  ; combout          ;
+; |control|NStimeDecade~59  ; |control|NStimeDecade~59  ; combout          ;
+; |control|NStimeDecade~60  ; |control|NStimeDecade~60  ; combout          ;
+; |control|EWtimeDecade~58  ; |control|EWtimeDecade~58  ; combout          ;
+; |control|CLK              ; |control|CLK~corein       ; combout          ;
+; |control|RST              ; |control|RST~corein       ; combout          ;
+; |control|flash            ; |control|flash~corein     ; combout          ;
+; |control|NSR              ; |control|NSR              ; padio            ;
+; |control|NSY              ; |control|NSY              ; padio            ;
+; |control|NSG              ; |control|NSG              ; padio            ;
+; |control|EWR              ; |control|EWR              ; padio            ;
+; |control|EWY              ; |control|EWY              ; padio            ;
+; |control|EWG              ; |control|EWG              ; padio            ;
+; |control|NSunit[0]        ; |control|NSunit[0]        ; padio            ;
+; |control|NSunit[1]        ; |control|NSunit[1]        ; padio            ;
+; |control|NSunit[2]        ; |control|NSunit[2]        ; padio            ;
+; |control|NSunit[3]        ; |control|NSunit[3]        ; padio            ;
+; |control|EWunit[0]        ; |control|EWunit[0]        ; padio            ;
+; |control|EWunit[1]        ; |control|EWunit[1]        ; padio            ;
+; |control|EWunit[2]        ; |control|EWunit[2]        ; padio            ;
+; |control|EWunit[3]        ; |control|EWunit[3]        ; padio            ;
+; |control|NSdecade[0]      ; |control|NSdecade[0]      ; padio            ;
+; |control|NSdecade[3]      ; |control|NSdecade[3]      ; padio            ;
+; |control|EWdecade[0]      ; |control|EWdecade[0]      ; padio            ;
+; |control|EWdecade[3]      ; |control|EWdecade[3]      ; padio            ;
++---------------------------+---------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                               ;
++--------------------------+--------------------------+------------------+
+; Node Name                ; Output Port Name         ; Output Port Type ;
++--------------------------+--------------------------+------------------+
+; |control|Equal1~0        ; |control|Equal1~0        ; combout          ;
+; |control|Add0~20         ; |control|Add0~20         ; combout          ;
+; |control|Add0~20         ; |control|Add0~21         ; cout0            ;
+; |control|Add0~20         ; |control|Add0~21COUT1_43 ; cout1            ;
+; |control|Add0~22         ; |control|Add0~22         ; combout          ;
+; |control|Add0~22         ; |control|Add0~23         ; cout             ;
+; |control|Add0~24         ; |control|Add0~25         ; cout0            ;
+; |control|Add0~24         ; |control|Add0~25COUT1_41 ; cout1            ;
+; |control|Add0~26         ; |control|Add0~26         ; combout          ;
+; |control|Add0~26         ; |control|Add0~27         ; cout0            ;
+; |control|Add0~26         ; |control|Add0~27COUT1_45 ; cout1            ;
+; |control|Add0~28         ; |control|Add0~28         ; combout          ;
+; |control|Add0~28         ; |control|Add0~29         ; cout0            ;
+; |control|Add0~28         ; |control|Add0~29COUT1_47 ; cout1            ;
+; |control|Add0~30         ; |control|Add0~30         ; combout          ;
+; |control|state~53        ; |control|state~53        ; combout          ;
+; |control|EWtimeDecade~52 ; |control|EWtimeDecade~52 ; combout          ;
+; |control|Equal6~1        ; |control|Equal6~1        ; combout          ;
+; |control|Equal9~1        ; |control|Equal9~1        ; combout          ;
+; |control|cnt[2]          ; |control|cnt[2]          ; regout           ;
+; |control|cnt[3]          ; |control|cnt[3]          ; regout           ;
+; |control|cnt[1]          ; |control|cnt[1]          ; regout           ;
+; |control|cnt[4]          ; |control|cnt[4]          ; regout           ;
+; |control|cnt[5]          ; |control|cnt[5]          ; regout           ;
+; |control|cnt[6]          ; |control|cnt[6]          ; regout           ;
+; |control|NSdecade[1]     ; |control|NSdecade[1]     ; padio            ;
+; |control|NSdecade[2]     ; |control|NSdecade[2]     ; padio            ;
+; |control|EWdecade[1]     ; |control|EWdecade[1]     ; padio            ;
+; |control|EWdecade[2]     ; |control|EWdecade[2]     ; padio            ;
++--------------------------+--------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                               ;
++--------------------------+--------------------------+------------------+
+; Node Name                ; Output Port Name         ; Output Port Type ;
++--------------------------+--------------------------+------------------+
+; |control|Equal1~0        ; |control|Equal1~0        ; combout          ;
+; |control|Add0~20         ; |control|Add0~20         ; combout          ;
+; |control|Add0~20         ; |control|Add0~21         ; cout0            ;
+; |control|Add0~20         ; |control|Add0~21COUT1_43 ; cout1            ;
+; |control|Add0~22         ; |control|Add0~22         ; combout          ;
+; |control|Add0~22         ; |control|Add0~23         ; cout             ;
+; |control|Add0~24         ; |control|Add0~25         ; cout0            ;
+; |control|Add0~24         ; |control|Add0~25COUT1_41 ; cout1            ;
+; |control|Add0~26         ; |control|Add0~26         ; combout          ;
+; |control|Add0~26         ; |control|Add0~27         ; cout0            ;
+; |control|Add0~26         ; |control|Add0~27COUT1_45 ; cout1            ;
+; |control|Add0~28         ; |control|Add0~28         ; combout          ;
+; |control|Add0~28         ; |control|Add0~29         ; cout0            ;
+; |control|Add0~28         ; |control|Add0~29COUT1_47 ; cout1            ;
+; |control|Add0~30         ; |control|Add0~30         ; combout          ;
+; |control|state~53        ; |control|state~53        ; combout          ;
+; |control|NStimeUnit~51   ; |control|NStimeUnit~51   ; combout          ;
+; |control|EWtimeDecade~52 ; |control|EWtimeDecade~52 ; combout          ;
+; |control|Equal6~1        ; |control|Equal6~1        ; combout          ;
+; |control|Equal9~1        ; |control|Equal9~1        ; combout          ;
+; |control|cnt[2]          ; |control|cnt[2]          ; regout           ;
+; |control|cnt[3]          ; |control|cnt[3]          ; regout           ;
+; |control|cnt[1]          ; |control|cnt[1]          ; regout           ;
+; |control|cnt[4]          ; |control|cnt[4]          ; regout           ;
+; |control|cnt[5]          ; |control|cnt[5]          ; regout           ;
+; |control|cnt[6]          ; |control|cnt[6]          ; regout           ;
+; |control|NSdecade[1]     ; |control|NSdecade[1]     ; padio            ;
+; |control|NSdecade[2]     ; |control|NSdecade[2]     ; padio            ;
+; |control|EWdecade[1]     ; |control|EWdecade[1]     ; padio            ;
+; |control|EWdecade[2]     ; |control|EWdecade[2]     ; padio            ;
++--------------------------+--------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Fri Sep 29 08:37:54 2017
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off fpga -c fpga
+Info: Using vector source file "C:/Users/hp/Desktop/数电课程设计/FPGA/2.6/control.vwf"
+Info: Inverted registers were found during simulation
+    Info: Register: |control|light[3]
+    Info: Register: |control|light[2]
+    Info: Register: |control|mode[2]
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      83.96 %
+Info: Number of transitions in simulation is 1720
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 168 megabytes
+    Info: Processing ended: Fri Sep 29 08:37:54 2017
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sat Sep 23 16:44:30 2017
+Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
+Revision Name : dec24
+Top-level Entity Name : dec24
+Family : MAX II
+Device : EPM570T100C5
+Timing Models : Final
+Total logic elements : 4 / 570 ( < 1 % )
+Total pins : 6 / 76 ( 8 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

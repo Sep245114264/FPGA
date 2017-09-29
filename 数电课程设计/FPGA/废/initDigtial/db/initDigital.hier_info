@@ -1,0 +1,25 @@
+|initDigital
+stateQ[0] => Equal3.IN3
+stateQ[0] => Equal2.IN3
+stateQ[0] => Equal1.IN3
+stateQ[0] => Equal0.IN3
+stateQ[1] => Equal3.IN2
+stateQ[1] => Equal2.IN2
+stateQ[1] => Equal1.IN2
+stateQ[1] => Equal0.IN2
+nsTime[0] <= tempNStime[0].DB_MAX_OUTPUT_PORT_TYPE
+nsTime[1] <= tempNStime[1].DB_MAX_OUTPUT_PORT_TYPE
+nsTime[2] <= tempNStime[2].DB_MAX_OUTPUT_PORT_TYPE
+nsTime[3] <= <GND>
+nsTime[4] <= <GND>
+nsTime[5] <= <GND>
+nsTime[6] <= <GND>
+ewTime[0] <= tempEWtime[0].DB_MAX_OUTPUT_PORT_TYPE
+ewTime[1] <= tempEWtime[1].DB_MAX_OUTPUT_PORT_TYPE
+ewTime[2] <= tempEWtime[2].DB_MAX_OUTPUT_PORT_TYPE
+ewTime[3] <= <GND>
+ewTime[4] <= <GND>
+ewTime[5] <= <GND>
+ewTime[6] <= <GND>
+
+

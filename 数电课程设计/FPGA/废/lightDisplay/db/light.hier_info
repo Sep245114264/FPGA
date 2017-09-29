@@ -1,0 +1,27 @@
+|light
+stateQ[0] => Equal3.IN3
+stateQ[0] => Equal2.IN3
+stateQ[0] => Equal1.IN3
+stateQ[0] => Equal0.IN3
+stateQ[1] => Equal3.IN2
+stateQ[1] => Equal2.IN2
+stateQ[1] => Equal1.IN2
+stateQ[1] => Equal0.IN2
+CLK => nsY~0.OUTPUTSELECT
+CLK => ewY~0.OUTPUTSELECT
+CLK => tempLight[5].CLK
+CLK => tempLight[4].CLK
+CLK => tempLight[3].CLK
+CLK => tempLight[2].CLK
+CLK => tempLight[1].CLK
+CLK => tempLight[0].CLK
+CLK => nsY~1.OUTPUTSELECT
+CLK => ewY~1.OUTPUTSELECT
+nsR <= tempLight[5].DB_MAX_OUTPUT_PORT_TYPE
+nsY <= nsY~2.DB_MAX_OUTPUT_PORT_TYPE
+nsG <= tempLight[3].DB_MAX_OUTPUT_PORT_TYPE
+ewR <= tempLight[2].DB_MAX_OUTPUT_PORT_TYPE
+ewY <= ewY~2.DB_MAX_OUTPUT_PORT_TYPE
+ewG <= tempLight[0].DB_MAX_OUTPUT_PORT_TYPE
+
+

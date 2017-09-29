@@ -1,0 +1,94 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity control is
+	generic( t : integer := 3;
+		    s0 : integer := 0;
+		    s1 : integer := 1;
+		    s2 : integer := 2;
+		    s3 : integer := 3);
+	port(	CLK : in std_logic;
+		NSR, NSY, NSG, EWR, EWY, EWG : out std_logic;
+		NS, EW : out std_logic_vector(6 downto 0)
+		);
+end entity;
+
+architecture beh of control is
+signal state : integer range 0 to 5 := s0;
+signal light : std_logic_vector(5 downto 0) := "001100";
+signal NStime : integer range 0 to 100 := 5*t;
+signal EWtime : integer range 0 to 100 := (5+1)*t;
+begin
+	process(CLK)
+	begin
+		if( rising_edge(CLK) ) then
+			if( state = s0 ) then
+				light <= "001100";
+				NStime <= NStime - 1;
+				EWtime <= EWtime - 1;
+				if( NStime = 0 ) then
+					state <= s1;
+					NStime <= 1*t;
+					EWtime <= 1*t;
+					light <= "010100";
+				end if;
+			elsif( state = s1 ) then 
+				light <= "010100";
+				NStime <= NStime - 1;
+				EWtime <= EWtime - 1;
+				if( NStime = 0 ) then
+					state <= s2;
+					NStime <= (5+1)*t;
+					EWtime <= 5*t;
+					light <= "100001";
+				end if;
+			elsif( state = s2 ) then
+				light <= "100001";
+				NStime <= NStime - 1;
+				EWtime <= EWtime - 1;
+				if( EWtime = 0 ) then 
+					state <= s3;
+					NStime <= 1*t;
+					EWtime <= 1*t;
+					light <= "100010";
+				end if;
+			elsif( state = s3 ) then
+				light <= "100010";
+				NStime <= NStime - 1;
+				EWtime <= EWtime - 1;
+				if( EWtime = 0 ) then
+					state <= s0;
+					NStime <= 5*t;
+					EWtime <= (5+1)*t;
+					light <= "001100";
+				end if;
+			end if;
+			if( light(4) = '1' )	then
+				if( CLK = '1' ) then
+					light(4) <= '1';
+				elsif( CLK = '0' ) then
+					light(4) <= '0';
+				end if;
+			end if;
+			if( light(1) = '1' ) then
+				if( CLK = '1' ) then
+					light(1) <= '1';
+				elsif( CLK = '0' ) then
+					light(1) <= '0';
+				end if;
+			end if;
+			NSR <= light(5);
+			NSY <= light(4);
+			NSG <= light(3);
+			EWR <= light(2);
+			EWY <= light(1);
+			EWG <= light(0);
+			NS <= conv_std_logic_vector(NStime, 7);
+			EW <= conv_std_logic_vector(EWtime, 7);
+		end if;
+	end process;
+	
+end architecture;
+			

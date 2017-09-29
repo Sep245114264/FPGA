@@ -1,0 +1,45 @@
+|div
+CLK => num[25].CLK
+CLK => num[24].CLK
+CLK => num[23].CLK
+CLK => num[22].CLK
+CLK => num[21].CLK
+CLK => num[20].CLK
+CLK => num[19].CLK
+CLK => num[18].CLK
+CLK => num[17].CLK
+CLK => num[16].CLK
+CLK => num[15].CLK
+CLK => num[14].CLK
+CLK => num[13].CLK
+CLK => num[12].CLK
+CLK => num[11].CLK
+CLK => num[10].CLK
+CLK => num[9].CLK
+CLK => num[8].CLK
+CLK => num[7].CLK
+CLK => num[6].CLK
+CLK => num[5].CLK
+CLK => num[4].CLK
+CLK => num[3].CLK
+CLK => num[2].CLK
+CLK => num[1].CLK
+CLK => num[0].CLK
+CLK => \process_1:num[13].CLK
+CLK => \process_1:num[12].CLK
+CLK => \process_1:num[11].CLK
+CLK => \process_1:num[10].CLK
+CLK => \process_1:num[9].CLK
+CLK => \process_1:num[8].CLK
+CLK => \process_1:num[7].CLK
+CLK => \process_1:num[6].CLK
+CLK => \process_1:num[5].CLK
+CLK => \process_1:num[4].CLK
+CLK => \process_1:num[3].CLK
+CLK => \process_1:num[2].CLK
+CLK => \process_1:num[1].CLK
+CLK => \process_1:num[0].CLK
+Q1 <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+Q400 <= LessThan2.DB_MAX_OUTPUT_PORT_TYPE
+
+

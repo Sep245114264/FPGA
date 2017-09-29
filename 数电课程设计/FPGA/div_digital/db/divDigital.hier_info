@@ -1,0 +1,21 @@
+|divDigital
+CLK => num[16].CLK
+CLK => num[15].CLK
+CLK => num[14].CLK
+CLK => num[13].CLK
+CLK => num[12].CLK
+CLK => num[11].CLK
+CLK => num[10].CLK
+CLK => num[9].CLK
+CLK => num[8].CLK
+CLK => num[7].CLK
+CLK => num[6].CLK
+CLK => num[5].CLK
+CLK => num[4].CLK
+CLK => num[3].CLK
+CLK => num[2].CLK
+CLK => num[1].CLK
+CLK => num[0].CLK
+Q <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+

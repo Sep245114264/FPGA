@@ -1,0 +1,7 @@
+|cnt4
+CLK => tempQ[1].CLK
+CLK => tempQ[0].CLK
+Q[0] <= tempQ[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tempQ[1].DB_MAX_OUTPUT_PORT_TYPE
+
+

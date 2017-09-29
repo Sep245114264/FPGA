@@ -1,0 +1,29 @@
+ library ieee;
+ use ieee.std_logic_1164.all;
+ use ieee.std_logic_unsigned.all;
+ 
+ entity div is
+	port( CLK : in std_logic;
+		  Q   : out std_logic);
+end;
+
+architecture bhv of div is
+signal tempQ : std_logic;
+begin
+	process(CLK)
+	variable num : integer range 0 to 50000000;
+	begin
+		if( rising_edge(CLK) ) then
+			num := num + 1;
+		end if;
+		if( num < 25000000 ) then
+			tempQ <= '0';
+		else
+			tempQ <= '1';
+		end if;
+		if( num > 50000000 ) then
+			num := 0;
+		end if;
+	end process;
+	Q <= tempQ;
+end architecture;
